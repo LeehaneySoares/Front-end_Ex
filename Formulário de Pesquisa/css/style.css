@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-size: 62.50%;
+    font-family: 'Montserrat', sans-serif; 
+    background-color: rgba(99, 12, 170, 1.24);
+}
+
+.container{
+    max-width: 800px; 
+    margin: 50px auto;
+    position: relative;
+}
+.container header{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.container main{
+    width: 100%;
+    border-radius: 15px;
+    background: rgba(133, 14, 230);
+    padding: 10px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+fieldset, legend{
+    padding: 10px;
+}
+fieldset{
+    border-radius: 10px;
+    border: 1px solid #FFF;
+}
+.form-group,label{
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="email"], input[type="date"], select{
+   
+    width:90%;
+    height: 40px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+textarea{
+    resize: vertical;
+}
+.submit-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bottom{
+    width:50%;
+    height: 40px;
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:500px){
+
+    *{
+        font-size: 1.2rem;
+    }
+    
+    input{
+        width: auto;
+        height: auto;
+    }
+
+}
+@media only screen and (max-width:370px){
+
+    *{
+        font-size: 1rem;
+    }
+    form .form-group select{
+
+        width:75%;
+    }
+    
+
+
+}
