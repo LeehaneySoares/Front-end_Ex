@@ -1,4 +1,4 @@
-# GRID DE PREÇO
+# Formulário de Pesquisa
 > Descrição curta sobre o formulário.
 
 É um formulário simples, utilizando todos os inputs do HTML5 afim de fixar os conteúdos estudados (Não inseri o input do tipo file).
