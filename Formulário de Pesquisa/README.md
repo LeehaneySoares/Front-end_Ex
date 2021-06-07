@@ -1,14 +1,14 @@
 # GRID DE PREÇO
-> Descrição curta sobre a grid de preço.
+> Descrição curta sobre o formulário.
 
-Essa é uma pequena lading page, totalmente responsiva que conta com um tema noturno em JavaScript.
+É um formulário simples, utilizando todos os inputs do HTML5 afim de fixar os conteúdos estudados (Não inseri o input do tipo file).
 
 ## Objetivo
 
-Com o intuito de praticar CSS grid, flex-box e Javascript, a Grid de Preço é apenas uma lading page com recursos, como: Modo Noturno e com o layout totalmente responsivo.
+Com o intuito de praticar as tag de form do HTML5 esse projetinho é um formulário simples totalmente responsivo e que conta com validações de campos e expressões regulares para o campo de e-mail.
 
-![2021-06-03 12-28-48](https://user-images.githubusercontent.com/35075757/120714135-300b0100-c499-11eb-83e4-caa2d9cee2ee.gif)
-    
+![image](https://user-images.githubusercontent.com/35075757/120950516-5214b580-c71d-11eb-9dff-5351d8d1f59e.png)
+
 
 ## Instalação
 
@@ -17,7 +17,7 @@ Basta baixar o pacote com o npm ou clonando esse repositório.
 
 ## Exemplo de uso
 
-Caso tenha uma área específica que queria inserir preços, benefícios e descrições do seu produto, basta fazer um clone desse repositório. 
+Caso queira um formulário pronto para usar, com validação de campos, basta fazer um clone desse repositório. 
 
 
 ## Meta
