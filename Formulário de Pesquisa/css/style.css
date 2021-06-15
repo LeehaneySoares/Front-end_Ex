@@ -80,16 +80,15 @@ textarea{
     }
 
 }
-@media only screen and (max-width:370px){
+@media (max-width:400px){
 
     *{
         font-size: 1rem;
     }
-    form .form-group select{
+@media (max-width:350px){
 
-        width:75%;
+    textarea{
+        width: 100%;
     }
-    
-
 
 }
