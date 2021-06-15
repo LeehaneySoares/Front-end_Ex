@@ -73,11 +73,6 @@ textarea{
     *{
         font-size: 1.2rem;
     }
-    
-    input{
-        width: auto;
-        height: auto;
-    }
 
 }
 @media (max-width:400px){
