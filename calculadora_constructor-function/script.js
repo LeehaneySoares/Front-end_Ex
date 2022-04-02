@@ -6,6 +6,7 @@ function Calculadora () {
   this.constructor = function () {
     this.createButton()
     this.pressEnter()
+    this.display.focus()
   }
 
   this.backSpace = function () {
