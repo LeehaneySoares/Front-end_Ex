@@ -1,0 +1,19 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeehaneySoares/Front-end_Ex"
+  },
+  "author": "Leehaney Soares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeehaneySoares/Front-end_Ex/issues"
+  },
+  "type": "module"
+}
