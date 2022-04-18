@@ -1,4 +1,4 @@
-import { generatePromises } from './generatePromises.js'
+import { generatePromises } from './services/generatePromises.js'
 import { template } from './template.js'
 
 const app = () => {
