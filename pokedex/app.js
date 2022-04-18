@@ -1,9 +1,15 @@
-import { getPokemons } from './getPokemons.js'
+import { generatePromises } from './generatePromises.js'
+import { template } from './template.js'
 
 const app = () => {
-  for (let id = 1; id <= 150; id++) {
-    getPokemons(id)
-  }
+  const ul = document.querySelector('[data-js="pokedex"]')
+  const promisesPokemon = generatePromises()
+
+  Promise.all(promisesPokemon)
+    .then(response => {
+      console.log(response)
+      ul.innerHTML = template(response)
+    })
 }
 
 app()
