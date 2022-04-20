@@ -7,7 +7,6 @@ const app = () => {
 
   Promise.all(promisesPokemon)
     .then(response => {
-      console.log(response)
       ul.innerHTML = template(response)
     })
 }
