@@ -1,0 +1,22 @@
+:root {
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  box-sizing: border-box;
+  background-color: darkslateblue;
+}
+
+.imc {
+  background-color: var(--color-master-lightest);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 680px;
+  width: 100%;
+}
