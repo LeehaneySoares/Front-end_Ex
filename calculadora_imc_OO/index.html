@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-  <meta charset='UTF-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='stylesheet' type='text/css' href='./css/style.css' />
-  <script src='./js/script.js' defer></script>
-  <title>Calculadora IMC</title>
-</head>
-<body>
-  <main class='imc'>
-    <h1 class='imc__title'>Calculadora IMC</h1>
-    <form class='imc__form'>
-      <fieldset class='imc__fieldset'>
-        <legend class='imc__legend'>Nome</legend>
-        <input class='imc__input' type='text' placeholder='Seu nome aqui' />
-      </fieldset>
-      <fieldset class='imc__fieldset'>
-        <legend class='imc__legend'>Idade:</legend>
-        <input class='imc__input' type='number' placeholder='Sua idade' />
-      </fieldset>
-      <fieldset class='imc__fieldset'>
-        <legend class='imc__legend'>Altura:</legend>
-        <input class='imc__input' type='number' placeholder='Sua altura' />
-      </fieldset>
-      <fieldset class='imc__fieldset'>
-        <legend class='imc__legend'>Peso:</legend>
-        <input class='imc__input' type='number' placeholder='Seu peso' />
-      </fieldset>
-      <button type='submit' class='imc__submit'>Verificar</button>
-    </form>
-  </main>
-</body>
+  <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' href='./css/style.css' />
+    <title>Calculadora IMC</title>
+  </head>
+  <body>
+    <main class='imc'>
+      <h1 class='imc__title'>Calculadora IMC</h1>
+      <form enctype='multipart/form-data' class='imc__form'>
+        <fieldset class='imc__fieldset'>
+          <legend class='imc__legend'>Nome</legend>
+          <input class='imc__input name' type='text' name='nome' placeholder='Seu nome aqui' required />
+        </fieldset>
+        <fieldset class='imc__fieldset'>
+          <legend class='imc__legend'>Idade:</legend>
+          <input class='imc__input age' type='number' name='idade' placeholder='Sua idade' required />
+        </fieldset>
+        <fieldset class='imc__fieldset'>
+          <legend class='imc__legend'>Altura:</legend>
+          <input class='imc__input height' type='number' name='altura' placeholder='Sua altura' required />
+        </fieldset>
+        <fieldset class='imc__fieldset'>
+          <legend class='imc__legend'>Peso:</legend>
+          <input class='imc__input kg' type='number' name='peso' placeholder='Seu peso' required />
+        </fieldset>
+        <button type='submit' class='imc__submit submit'>Verificar</button>
+      </form>
+      <table class='imc__table table'>
+        <tr>
+          <td>
+            <span>Nome</span>
+          </td>
+          <td>
+            <span>Idade</span>
+          </td>
+          <td>
+            <span>Peso</span>
+          </td>
+          <td>
+            <span>Altura</span>
+          </td>
+          <td>
+            <span>IMC</span>
+          </td>
+        </tr>
+      </table>
+    </main>
+    <script type='module' src='./js/script.js' defer></script>
+  </body>
 </html>
