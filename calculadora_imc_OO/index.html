@@ -10,23 +10,25 @@
 </head>
 <body>
   <main class='imc'>
+    <h1 class='imc__title'>Calculadora IMC</h1>
     <form class='imc__form'>
-      <div class='imc__inputGroup'>
-        <label name='nome'>Nome:</label>
-        <input type='text' placeholder='Seu nome aqui' />
-      </div>
-      <div class='imc__inputGroup'>
-        <label name='idade'>Idade:</label>
-        <input type='number' placeholder='Sua idade' />
-      </div>
-      <div class='imc__inputGroup'>
-        <label name='altura'>Altura:</label>
-        <input type='number' placeholder='Sua altura' />
-      </div>
-      <div class='imc__inputGroup'>
-        <label name='peso'>Peso:</label>
-        <input type='number' placeholder='Seu peso' />
-      </div>
+      <fieldset class='imc__fieldset'>
+        <legend class='imc__legend'>Nome</legend>
+        <input class='imc__input' type='text' placeholder='Seu nome aqui' />
+      </fieldset>
+      <fieldset class='imc__fieldset'>
+        <legend class='imc__legend'>Idade:</legend>
+        <input class='imc__input' type='number' placeholder='Sua idade' />
+      </fieldset>
+      <fieldset class='imc__fieldset'>
+        <legend class='imc__legend'>Altura:</legend>
+        <input class='imc__input' type='number' placeholder='Sua altura' />
+      </fieldset>
+      <fieldset class='imc__fieldset'>
+        <legend class='imc__legend'>Peso:</legend>
+        <input class='imc__input' type='number' placeholder='Seu peso' />
+      </fieldset>
+      <button type='submit' class='imc__submit'>Verificar</button>
     </form>
   </main>
 </body>
