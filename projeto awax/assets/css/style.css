@@ -2,6 +2,7 @@
   --border-width-thick: 4px;
   --color-master-primary: #B28756;
   --color-master-darkest: #0a0a0a;
+  --color-master-light: #e6e6e6;
   --color-master-lightest: #fafafa;
   --font-family-default: 'Montserrat', sans-serif;
   --font-size-xxxs: 12px;
@@ -11,6 +12,10 @@
   --font-size-md: 24px;
   --font-size-lg: 32px;
   --font-size-xl: 40px;
+  --font-size-xxl: 48px;
+  --font-size-xxxl: 64px;
+  --font-size-display: 80px;
+  --font-size-giant: 96px;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
@@ -102,21 +107,41 @@
 }
 
 .main__hero {
-  display: flex;
   height: calc(100vh - 100px);
+  overflow: hidden;
+  position: relative;
   width: auto;
 }
 
 .main__hero-area {
-  overflow: hidden;
-  width: 100vw;
+  display: flex;
+  height: 100%;
+  width: calc(100vw * 3);
 }
 
 .main__hero-img {
+  display: inline-block;
+  filter: brightness(60%);
   height: 100%;
   object-fit: cover;
-  object-position: 0 100%;
+  width: 100vw;
+}
+
+.main__hero-title {
+  align-items: center;
+  color: var(--color-master-lightest);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-xxl);
+  height: 100%;
+  justify-content: center;
+  position: absolute;
   width: 100%;
+  z-index: 1;
+}
+
+.main__hero-title > span {
+  color: var(--color-master-primary);
 }
 
 
