@@ -102,13 +102,21 @@
 }
 
 .main__hero {
-  background-attachment: fixed;
-  background-image: url('../media/bg.jpg');
-  background-position: bottom;
-  background-size: cover;
-  filter: brightness(40%);
+  display: flex;
   height: calc(100vh - 100px);
+  width: auto;
+}
+
+.main__hero-area {
+  overflow: hidden;
   width: 100vw;
+}
+
+.main__hero-img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 100%;
+  width: 100%;
 }
 
 
