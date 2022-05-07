@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-primary: #B28756;
+  --color-master-darkest: #0a0a0a;
+  --color-master-lightest: #fafafa;
+  --spacing-quarck: 4px;
+  --spacing-nano: 8px;
+  --spacing-xxxs: 16px;
+  --spacing-xxs: 24px;
+  --spacing-xs: 32px;
+  --spacing-sm: 40px;
+  --spacing-md: 48px;
+  --spacing-lg: 56px;
+  --spacing-xl: 64px;
+  --spacing-xxl: 80px;
+  --spacing-xxxl: 120px;
+  --spacing-huge: 160px;
+  --spacing-giant: 200px;
+  --spacing_inset-quarck: 4px;
+  --spacing_inset-nano: 8px;
+  --spacing_inset-xs: 16px;
+  --spacing_inset-sm: 24px;
+  --spacing_inset-md: 32px;
+  --spacing_inset-lg: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: var(--color-master-darkest);
+  height: calc(var(--spacing-xxxl) - 20px);
+  width: 100vw;
+}
+
+.header__container {
+  align-items: center;
+  color: var(--color-master-lightest);
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+}
+
+#header__logo {
+  height: 80px;
+  width: 80px;
+}
+
+.header__menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+
