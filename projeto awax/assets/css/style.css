@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-
 :root {
-  --color-primary: #B28756;
+  --border-width-thick: 4px;
+  --color-master-primary: #B28756;
   --color-master-darkest: #0a0a0a;
   --color-master-lightest: #fafafa;
+  --font-family-default: 'Montserrat', sans-serif;
+  --font-size-xxxs: 12px;
+  --font-size-xxs: 14px;
+  --font-size-xs: 16px;
+  --font-size-sm: 20px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+  --font-size-xl: 40px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
   --spacing-quarck: 4px;
   --spacing-nano: 8px;
   --spacing-xxxs: 16px;
@@ -22,6 +33,7 @@
   --spacing_inset-xs: 16px;
   --spacing_inset-sm: 24px;
   --spacing_inset-md: 32px;
+  --spacing_inset-regular: 36px;
   --spacing_inset-lg: 40px;
 }
 
@@ -37,9 +49,8 @@
   width: 100vw;
 }
 
-.header__container {
+.container {
   align-items: center;
-  color: var(--color-master-lightest);
   display: flex;
   height: 100%;
   margin: 0 auto;
@@ -48,14 +59,56 @@
 }
 
 #header__logo {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
 }
 
 .header__menu {
   display: flex;
   flex: 1;
   justify-content: flex-end;
+}
+
+.header__list {
+  color: var(--color-master-lightest);
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header__list li {
+  list-style: none;
+  padding: var(--spacing_inset-nano);
+}
+
+.header__list li > a {
+  color: var(--color-master-lightest);
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing_inset-regular) 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header__list li > a[active="true"],
+.header__list li > a:hover {
+  border-bottom: var(--border-width-thick) solid var(--color-master-primary);
+}
+
+.main {
+  height: auto;
+  width: 100vw;
+}
+
+.main__hero {
+  background-attachment: fixed;
+  background-image: url('../media/bg.jpg');
+  background-position: bottom;
+  background-size: cover;
+  filter: brightness(40%);
+  height: calc(100vh - 100px);
+  width: 100vw;
 }
 
 
