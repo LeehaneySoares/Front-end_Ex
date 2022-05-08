@@ -1,0 +1,11 @@
+:root {
+  --spacing-md: 48px;
+}
+
+.pointer__area {
+  background-color: red;
+  height: 15px;
+  margin-bottom: -50px;
+  position: absolute;
+  width: 100vw;
+}
