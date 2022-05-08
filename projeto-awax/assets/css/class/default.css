@@ -6,10 +6,16 @@
 }
 
 .default__hgroup {
+  line-height: 30px;
   padding: var(--spacing_inset-lg);
   text-align: center;
+  text-transform: uppercase;
 }
 
 .default__hgroup-title {
   color: var(--color-master-darkest);
+}
+
+.default__hgroup-desc {
+  color: var(--color-master);
 }
