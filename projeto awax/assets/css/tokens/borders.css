@@ -1,0 +1,10 @@
+:root {
+  --border-width-hairline: 2px;
+  --border-width-thick: 4px;
+  --border-radius-none: 0;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-pill: 500px;
+  --border-radius-circular: 50%;
+}
