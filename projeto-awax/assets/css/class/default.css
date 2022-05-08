@@ -5,7 +5,11 @@
   flex-direction: column;
 }
 
-.default-hgroup {
+.default__hgroup {
   padding: var(--spacing_inset-lg);
   text-align: center;
+}
+
+.default__hgroup-title {
+  color: var(--color-master-darkest);
 }
