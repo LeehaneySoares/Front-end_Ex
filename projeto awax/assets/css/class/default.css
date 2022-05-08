@@ -1,0 +1,11 @@
+.default {
+  align-items: center;
+  background-color: var(--color-master-lightest);
+  display: flex;
+  flex-direction: column;
+}
+
+.default-hgroup {
+  padding: var(--spacing_inset-lg);
+  text-align: center;
+}
