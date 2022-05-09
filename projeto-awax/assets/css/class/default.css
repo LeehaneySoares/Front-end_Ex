@@ -6,6 +6,7 @@
 }
 
 .default__hgroup {
+  font-weight: var(--font-weight-semibold);
   line-height: 30px;
   padding: var(--spacing_inset-lg);
   text-align: center;
@@ -18,4 +19,5 @@
 
 .default__hgroup-desc {
   color: var(--color-master);
+  font-size: var(--font-size-xxxs);
 }

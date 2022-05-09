@@ -1,0 +1,23 @@
+.dark {
+  align-items: center;
+  background-color: var(--color-master-darkest);
+  display: flex;
+  flex-direction: column;
+}
+
+.dark__hgroup {
+  font-weight: var(--font-weight-semibold);
+  line-height: 30px;
+  padding: var(--spacing_inset-lg);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.dark__hgroup-title {
+  color: var(--color-master-lightest);
+}
+
+.dark__hgroup-desc {
+  color: var(--color-master);
+  font-size: var(--font-size-xxxs);
+}
