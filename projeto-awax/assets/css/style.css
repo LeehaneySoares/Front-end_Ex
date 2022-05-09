@@ -81,3 +81,30 @@ html, body {
   object-fit: cover;
   width: 500px;
 }
+
+.main__services .container {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--spacing_inset-lg);
+}
+
+.main__services-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__services-icons::before {
+  border-left: var(--border-width-hairline) solid var(--color-master-lightest);
+  content: " ";
+  color: var(--color-master-lightest);
+  margin-left: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+}
+
+.main__services-icons:nth-child(4)::after {
+  border-left: var(--border-width-hairline) solid var(--color-master-lightest);
+  content: " ";
+  color: var(--color-master-lightest);
+  margin-left: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+}
