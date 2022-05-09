@@ -57,3 +57,27 @@ html, body {
 .main__hero-title > p {
   font-size: var(--font-size-xs);
 }
+
+.main__about .container {
+  padding-bottom: var(--spacing_inset-lg);
+  gap: var(--spacing_inset-lg);
+}
+
+.main__about-text,
+.main__about-video {
+  width: 50%;
+}
+
+.main__about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-lg);
+  justify-content: space-between;
+  line-height: 25px;
+}
+
+.main__about-video img {
+  box-shadow: var(--shadow-level-1);
+  object-fit: cover;
+  width: 500px;
+}
