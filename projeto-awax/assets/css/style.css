@@ -176,10 +176,35 @@ html, body {
 
 .main__projects-image {
   height: 240px;
+  position: relative;
 }
 
 .main__projects-image img {
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.main__projects-caption {
+  color: var(--color-master-lightest);
+  display: none;
+  height: 100%;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(50%, -50%);
+  width: 100%;
+}
+
+.main__projects-image:hover figcaption {
+  align-items: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__projects-caption strong {
+  font-weight: var(--font-weight-bold);
 }
