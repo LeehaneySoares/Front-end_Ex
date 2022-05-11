@@ -8,7 +8,7 @@
 .dark__hgroup {
   font-weight: var(--font-weight-semibold);
   line-height: 30px;
-  padding: var(--spacing_inset-lg);
+  padding: var(--spacing_inset-lg) 0;
   text-align: center;
   text-transform: uppercase;
 }

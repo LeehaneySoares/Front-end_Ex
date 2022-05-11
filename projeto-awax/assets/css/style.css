@@ -120,3 +120,66 @@ html, body {
 .main__services-icons:nth-last-child(1) {
   border-right: var(--border-width-hairline) solid var(--color-master);
 }
+
+.main__projects .container {
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: var(--spacing_inset-lg);
+}
+
+.main__projects-filter {
+  border: var(--border-width-hairline) solid var(--color-master-light);
+  border-radius: var(--border-radius-pill);
+  box-shadow: var(--shadow-level-1) var(--color-master-light);
+  height: 70px;
+}
+
+.main__projects-list {
+  display: flex;
+  margin: 0;
+  padding: 0 var(--spacing_inset-md);
+}
+
+.main__projects-list li {
+  border-right: var(--border-width-hairline) solid var(--color-master-light);
+  cursor: pointer;
+  height: 100%;
+  list-style: none;
+  padding: var(--spacing_inset-sm) var(--spacing_inset-sm) 20px;
+  text-transform: uppercase;
+}
+
+.main__projects-list li:last-child {
+  border-right: none !important;
+}
+
+.main__projects-list li:hover {
+  border-bottom: var(--border-width-thick) solid var(--color-master-primary);
+}
+
+.main__projects-gallery {
+  padding: var(--spacing_inset-lg) 0;
+}
+
+.main__projects-gallery {
+  display: grid;
+  gap: var(--spacing_inset-sm);
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .main__projects-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.main__projects-image {
+  height: 240px;
+}
+
+.main__projects-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
