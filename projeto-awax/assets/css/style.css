@@ -194,6 +194,7 @@ html, body {
   top: 50%;
   text-align: center;
   transform: translate(50%, -50%);
+  user-select: none;
   width: 100%;
 }
 
@@ -208,3 +209,15 @@ html, body {
 .main__projects-caption strong {
   font-weight: var(--font-weight-bold);
 }
+
+.main__team-area {
+  background-color:rgba(0, 0, 0, 0.7);
+  width: 100vw;
+}
+
+.main__team {
+  background-attachment: fixed;
+  background-image: url('../media/bg.jpg');
+  background-position: center;
+}
+
