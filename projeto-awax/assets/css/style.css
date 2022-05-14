@@ -21,7 +21,7 @@ html, body {
   width: auto;
 }
 
-.main__hero-area {
+.main__sliders{
   display: flex;
   height: 100%;
   width: calc(100vw * 3);
@@ -230,15 +230,52 @@ html, body {
   padding-bottom: var(--spacing_inset-lg);
 }
 
-.main__team-container {
-  width: calc(100vw * 3);
-  height: 100%;
-}
-
-.main__team-container .card__image {
+.main__sliders .card__image {
   width: 120px;
 }
 
 .main__team-area .pointer__area {
+  position: relative;
+}
+
+.container .clients {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients__figure {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-md);
+  justify-content: center;
+}
+
+.clients__figure img {
+  height: 120px;
+  width: 120px;
+}
+
+.clients__caption {
+  line-height: var(--spacing_inset-sm);
+  text-align: center;
+}
+
+.clients__caption-depoiment {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-lg);
+  padding: var(--spacing_inset-lg) 0;
+  width: 100%;
+}
+
+.clients__caption-depoiment img {
+  height: 25px;
+  width: 30px;
+}
+
+.main__clients .pointer__area {
   position: relative;
 }
