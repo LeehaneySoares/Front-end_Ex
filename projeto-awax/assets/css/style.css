@@ -221,3 +221,24 @@ html, body {
   background-position: center;
 }
 
+.main__team-div {
+  display: flex;
+  gap: var(--spacing_inset-sm);
+  margin: auto;
+  max-width: calc(300px * 3);
+  overflow: hidden;
+  padding-bottom: var(--spacing_inset-lg);
+}
+
+.main__team-container {
+  width: calc(100vw * 3);
+  height: 100%;
+}
+
+.main__team-container .card__image {
+  width: 120px;
+}
+
+.main__team-area .pointer__area {
+  position: relative;
+}
