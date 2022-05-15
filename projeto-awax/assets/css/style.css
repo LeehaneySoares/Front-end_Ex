@@ -297,13 +297,66 @@ html, body {
   justify-content: space-between;
 }
 
+.main__price {
+  background-color: var(--color-master-light);
+}
+
 .main__price .container {
   gap: var(--spacing_inset-xs);
   padding: var(--spacing_inset-lg) 0;
 }
 
 .main__price .card {
+  background-color: #fff;
+  gap: var(--spacing_inset-nano) !important;
   justify-content: flex-start;
   width: calc(100% / 100 * 100) !important;
 }
 
+.main__premium .container {
+  justify-content: center;
+  padding-bottom: var(--spacing_inset-md);
+}
+
+.main__premium-feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-sm);
+}
+
+.main__premium-figure,
+.main__premium-feature {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.feature__figure {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--spacing_inset-sm);
+}
+
+.feature__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-nano);
+}
+
+.feature__caption p {
+  color: var(--color-master);
+  line-height: var(--spacing_inset-sm);
+}
+
+.feature__list {
+  color: var(--color-master);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.feature__list li::before {
+  content: "-";
+  margin-right: var(--spacing-xxxs);
+}
