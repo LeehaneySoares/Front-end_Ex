@@ -230,6 +230,10 @@ html, body {
   padding-bottom: var(--spacing_inset-lg);
 }
 
+.main__team-div .card {
+  box-shadow: var(--shadow-level-1) var(--color-master);
+}
+
 .main__sliders .card__image {
   width: 120px;
 }
@@ -292,3 +296,14 @@ html, body {
 .main__brands .container {
   justify-content: space-between;
 }
+
+.main__price .container {
+  gap: var(--spacing_inset-xs);
+  padding: var(--spacing_inset-lg) 0;
+}
+
+.main__price .card {
+  justify-content: flex-start;
+  width: calc(100% / 100 * 100) !important;
+}
+
