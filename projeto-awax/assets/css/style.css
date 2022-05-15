@@ -279,3 +279,16 @@ html, body {
 .main__clients .pointer__area {
   position: relative;
 }
+
+.main__brands {
+  border-bottom: var(--border-width-hairline) solid var(--color-master-light);
+  border-top: var(--border-width-hairline) solid var(--color-master-light);
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  width: 100%;
+}
+
+.main__brands .container {
+  justify-content: space-between;
+}
