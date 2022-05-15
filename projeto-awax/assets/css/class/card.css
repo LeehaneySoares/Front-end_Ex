@@ -1,6 +1,7 @@
 .card {
   align-items: center;
   background-color: var(--color-master-lightest);
+  box-shadow: var(--shadow-level-1) var(--color-master-light);
   display: flex;
   flex-direction: column;
   gap: var(--spacing_inset-xs);
@@ -9,6 +10,31 @@
   min-height: 300px;
   padding: var(--spacing_inset-sm);
   width: 280px;
+}
+
+.card__plan {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+}
+
+.card__plan-price {
+  font-size: var(--font-size-md);
+}
+
+.card__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing_inset-nano);
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.card__list li::after {
+  content: "-";
 }
 
 .card__figure {
