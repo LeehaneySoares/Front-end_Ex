@@ -314,6 +314,7 @@ html, body {
 }
 
 .main__premium .container {
+  border-bottom: 1px solid var(--color-master-light);
   justify-content: center;
   padding-bottom: var(--spacing_inset-md);
 }
@@ -359,4 +360,9 @@ html, body {
 .feature__list li::before {
   content: "-";
   margin-right: var(--spacing-xxxs);
+}
+
+.main__premium .pointer__area {
+  padding-top: var(--spacing_inset-lg);
+  position: relative;
 }
