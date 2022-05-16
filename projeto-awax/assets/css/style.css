@@ -385,10 +385,9 @@ html, body {
   gap: var(--spacing_inset-nano);
   height: 100%;
   justify-content: center;
-  margin-bottom: var(--spacing-sm);
   text-align: center;
   text-transform: uppercase;
-  width: calc(100% / 4);
+  width: calc(90% / 4);
 }
 
 .facts__item .facts__numbers {
@@ -408,6 +407,7 @@ html, body {
 .facts__item p {
   color: var(--color-master);
   font-size: 8px;
+  width: 80%;
 }
 
 .main__social-bar {
@@ -443,10 +443,6 @@ html, body {
   color: var(--color-master);
 }
 
-.socialbar__figure img[alt="compartilhar"] {
-  background-color: var(--color-master-light);
-}
-
 .socialbar__figure img[alt="twitter"] {
   background-color: rgb(0, 153, 255);
 }
@@ -467,3 +463,39 @@ html, body {
   background-color: rgb(214, 37, 37);
 }
 
+.main__contact .container {
+  justify-content: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__group:last-child {
+  margin-top: var(--spacing-sm) !important;
+}
+
+.contact__input {
+  border: none;
+  border-bottom: var(--border-width-hairline) solid var(--color-master-light);
+  color: var(--color-master);
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin: var(--spacing-nano);
+  outline: none;
+  padding: var(--spacing_inset-nano) 0;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+.contact__form .btn {
+  margin: var(--spacing-sm) auto;
+}
