@@ -409,3 +409,61 @@ html, body {
   color: var(--color-master);
   font-size: 8px;
 }
+
+.main__social-bar {
+  border-bottom: var(--border-width-hairline) solid var(--color-master-light);
+  border-top: var(--border-width-hairline) solid var(--color-master-light);
+}
+
+.main__social-bar .container {
+  justify-content: center;
+}
+
+.socialbar__figure {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing_inset-nano);
+  padding: var(--spacing_inset-sm);
+}
+
+.socialbar__figure img {
+  border-radius: var(--border-radius-circular);
+  cursor: pointer;
+  height: 40px;
+  object-fit: none;
+  width: 40px
+}
+
+.socialbar__figure strong {
+  font-size: var(--font-size-xxxs);
+  color: var(--color-master-dark);
+}
+
+.socialbar__figure:first-child strong {
+  color: var(--color-master);
+}
+
+.socialbar__figure img[alt="compartilhar"] {
+  background-color: var(--color-master-light);
+}
+
+.socialbar__figure img[alt="twitter"] {
+  background-color: rgb(0, 153, 255);
+}
+
+.socialbar__figure img[alt="linkedin"] {
+  background-color: rgb(74, 84, 231);
+}
+
+.socialbar__figure img[alt="facebook"] {
+  background-color: rgb(0, 17, 255);
+}
+
+.socialbar__figure img[alt="googleplus"] {
+  background-color: rgb(223, 68, 76);
+}
+
+.socialbar__figure img[alt="pinterest"] {
+  background-color: rgb(214, 37, 37);
+}
+
