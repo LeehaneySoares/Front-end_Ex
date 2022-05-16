@@ -363,6 +363,6 @@ html, body {
 }
 
 .main__premium .pointer__area {
-  padding-top: var(--spacing_inset-lg);
+  margin: var(--spacing-xs) 0 0 0;
   position: relative;
 }

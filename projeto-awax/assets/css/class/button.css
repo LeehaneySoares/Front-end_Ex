@@ -16,6 +16,7 @@
   font-weight: var(--font-weight-bold);
   display: flex;
   justify-content: center;
+  margin: var(--spacing-xs) 0;
   padding: var(--spacing_inset-xs);
   text-transform: uppercase;
 }

@@ -4,7 +4,7 @@
   display: flex;
   height: 15px;
   justify-content: center;
-  margin-bottom: var(--spacing-xs);
+  margin: var(--spacing-xs) 0;
   position: absolute;
   width: 100vw;
 }
