@@ -313,6 +313,10 @@ html, body {
   width: calc(100% / 100 * 100) !important;
 }
 
+.main__price .card > .btn {
+  margin: 0 !important;
+}
+
 .main__premium .container {
   border-bottom: 1px solid var(--color-master-light);
   justify-content: center;
@@ -365,4 +369,43 @@ html, body {
 .main__premium .pointer__area {
   margin: var(--spacing-xs) 0 0 0;
   position: relative;
+}
+
+.main__facts .container {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.facts__item {
+  align-items: center;
+  color: var(--color-master-lightest);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-nano);
+  height: 100%;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+  text-transform: uppercase;
+  width: calc(100% / 4);
+}
+
+.facts__item .facts__numbers {
+  color: var(--color-master-primary);
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.facts__item .facts__numbers::after {
+  content: " ";
+  border-bottom: var(--border-width-hairline) solid var(--color-master);
+  display: flex;
+  margin: 0 auto;
+  width: 10px;
+}
+
+.facts__item p {
+  color: var(--color-master);
+  font-size: 8px;
 }
