@@ -76,10 +76,9 @@
   background-color: var(--color-master-light);
   border-radius: var(--border-radius-circular);
   cursor: pointer;
-  height: 25px;
-  padding: var(--spacing_inset-quarck);
-  object-fit: contain;
-  width: 25px;
+  height: 30px;
+  object-fit: none;
+  width: 30px;
 }
 
 .card__social img:hover {
