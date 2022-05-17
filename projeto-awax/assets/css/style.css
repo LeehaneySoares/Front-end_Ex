@@ -546,6 +546,15 @@ html, body {
   padding: var(--spacing_inset-sm) 0;
 }
 
+.footer .card__social-div {
+  align-items: flex-start;
+  color: var(--color-master-lightest);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
 .footer .card__social img {
   background-color: var(--color-master);
 }
