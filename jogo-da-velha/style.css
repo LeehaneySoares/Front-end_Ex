@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.player {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  height: 100px;
+  width: 100vw;
+}
+
+.grid {
+  align-items: center;
+  background-color: #ccc;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 500px;
+  justify-content: center;
+  margin: auto;
+  width: 500px;
+}
+
+.bloco {
+  background-color: black;
+  border: 1px solid #fff;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
