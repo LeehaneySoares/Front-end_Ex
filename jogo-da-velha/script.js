@@ -4,7 +4,8 @@ const inputs = document.querySelectorAll('.bloco')
 function changePlayer (index) {
   if (index % 2 === 0) {
     return player.textContent = 'X'
-  } else {
+  }
+  else {
     return player.textContent = 'O'
   }
 }
