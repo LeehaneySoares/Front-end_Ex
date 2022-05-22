@@ -2,31 +2,45 @@
  * DefineProperty
  */
 
-function Produto (nome, preco, estoque) {
+function Pessoa (nome, sobrenome, idade) {
   this.nome = nome
-  this.preco = preco
+  this.sobrenome = sobrenome
+  this.idade = idade
+  this.anoNasc = (ano) => ano - this.idade
+  this.nomeCompleto = () => `${this.nome} ${this.sobrenome}`
 
-  Object.defineProperty(this, 'preco', {
+  Object.defineProperty(this, 'nome', {
     enumerable: true,
-    value: preco,
+    value: nome,
     writable: false,
     configurable: true
   })
 
-  Object.defineProperty(this, 'estoque', {
-    enumerable: true, // Mostrar valor ao debugar ?
-    value: estoque, // Adiciona qualquer coisa, function, object, variáveis, parâmetros, etc...
-    writable: true, // Posso reescrever (true ou false) ?
-    configurable: true // Posso reconfigurar (true ou false) ?
-  })
+  /**
+   *
+   *
+   *
+   *
+   *
+   *
+   */
 
-  Object.defineProperty(this, 'preco', {
-    value: function () {
-      return `${this.nome} custa: 2000`
-    }
+  Object.defineProperty(this, 'nome', {
+    enumerable: false,
+    value: nome,
+    writable: true,
+    configurable: false
   })
 }
 
-const p1 = new Produto('Notebook', 2000, 5)
-p1.estoque = 10
-console.log(p1.preco())
+const p1 = new Pessoa ('Leehaney', 'Soares', 24)
+// console.log(p1.sobrenome)
+// console.log(p1.anoNasc(new Date().getFullYear()))
+// console.log(p1.nomeCompleto())
+
+const keys = Object.keys(p1) // Joga as chaves de um objeto dentro de um array, para que possa ser iterável
+
+for (let chave of keys) {
+  console.log(chave)
+}
+
