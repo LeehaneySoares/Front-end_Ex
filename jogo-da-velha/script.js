@@ -1,5 +1,6 @@
 const player = document.querySelector('.player p')
 const inputs = document.querySelectorAll('.bloco')
+const button = document.querySelector('.btn')
 let vencedor = '__'
 let jogador = '__'
 
@@ -97,4 +98,12 @@ inputs.forEach((item, index) => {
   })
 })
 
-
+button.addEventListener('click', function () {
+  inputs.forEach(function(item) {
+    jogador = '__'
+    vencedor = '__'
+    item.style['background-color'] = '#fff'
+    item.value = '__'
+    randomPlayer()
+  })
+})
