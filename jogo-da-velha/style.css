@@ -15,19 +15,35 @@
 
 .grid {
   align-items: center;
-  background-color: #ccc;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: 500px;
   justify-content: center;
   margin: auto;
+  position: relative;
   width: 500px;
 }
 
 .bloco {
-  background-color: black;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #1e1e1e;
+  background-color: white;
+  color: #1e1e1e;
+  font-size: 24px;
   height: 100%;
   width: 100%;
+}
+
+.btn {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, 50%);
+  top: 100%;
+  width: 100px;
 }
