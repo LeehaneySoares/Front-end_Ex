@@ -86,7 +86,7 @@ function randomPlayer () {
 
 randomPlayer()
 
-inputs.forEach((item, index) => {
+inputs.forEach(function (item) {
   item.addEventListener('click', function (event) {
     if ((event.target.value  === '__' && (vencedor  === '__'))) {
       event.target.value = jogador
