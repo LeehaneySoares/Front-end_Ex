@@ -4,11 +4,6 @@
  */
 
 function VideoGame (marca, modelo, rom, tela, ...jogos) {
-  this.marca = marca
-  this.modelo = modelo
-  this.rom = rom
-  this.tela = tela
-  this.jogos = jogos
   Object.defineProperties(this, {
     marca: {
       get: () => marca,
