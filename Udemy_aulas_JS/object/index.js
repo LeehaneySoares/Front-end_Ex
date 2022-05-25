@@ -30,33 +30,43 @@
  *
  */
 
-function criaPessoa (nome, sobrenome, idade) {
-  return {
-    nome,
-    sobrenome,
-    idade,
-    get nomeCompleto () {
-      return `${this.nome} ${this.sobrenome}`
-    }
+// function criaPessoa (nome, sobrenome, idade) {
+//   return {
+//     nome,
+//     sobrenome,
+//     idade,
+//     get nomeCompleto () {
+//       return `${this.nome} ${this.sobrenome}`
+//     }
+//   }
+// }
+
+
+// const p1 = criaPessoa('Leehaney', 'Soares', 24)
+
+// console.log(p1.nome, p1.sobrenome, p1.idade, p1.nomeCompleto)
+
+// function Pessoa (nome, sobrenome, idade) {
+//   this.nome = nome
+//   this.sobrenome = sobrenome
+//   this.idade = idade
+//   this.aniversario = () => 2022 - this.idade
+//   Object.freeze(this)
+// }
+
+// const p2 = new Pessoa('Leehaney', 'Soares', 25)
+// console.log(p2.nome, p2.idade)
+// p2.nome = 'Taylor'
+// console.log(p2.nome)
+// p2.idade = 50
+// console.log(p2.nome, p2.idade)
+
+const obj = {
+  nome: 'Leehaney',
+  sobrenome: 'Soares',
+  get nomeCompleto () {
+    return console.log(this.nome, this.sobrenome)
   }
 }
 
-
-const p1 = criaPessoa('Leehaney', 'Soares', 24)
-
-console.log(p1.nome, p1.sobrenome, p1.idade, p1.nomeCompleto)
-
-function Pessoa (nome, sobrenome, idade) {
-  this.nome = nome
-  this.sobrenome = sobrenome
-  this.idade = idade
-  this.aniversario = () => 2022 - this.idade
-  Object.freeze(this)
-}
-
-const p2 = new Pessoa('Leehaney', 'Soares', 25)
-console.log(p2.nome, p2.idade)
-p2.nome = 'Taylor'
-console.log(p2.nome)
-p2.idade = 50
-console.log(p2.nome, p2.idade)
+obj.nomeCompleto
