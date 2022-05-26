@@ -4,21 +4,20 @@ const pizzaArea = document.querySelector('.pizza-area')
 
 console.log(pizzaJson)
 
-function card (image, name) {
-  const img = document.createElement('img')
-  const caption = document.createElement('figcaption')
-  const figure = document.createElement('figure')
-  const a = document.createElement('a')
-  a.textContent = name
-  caption.appendChild(a)
-
-  figure.setAttribute('class', 'pizza-item')
-  img.setAttribute('class', 'pizza-item--img')
-  img.setAttribute('src', `./${image}`)
-  figure.append(img, caption)
-  return figure
+function card (item, id) {
+  return `
+    <figure class="pizza-item" id="${id}">
+      <img class="pizza-item--img" src="./${item.img}" alt="${item.name}" />
+      <figcaption class="caption">
+        <span>R$ ${item.price.toFixed(2)}<span>
+        <strong>${item.name}</strong>
+        <p>${item.description}</p>
+      </figcaption>
+      <button class="pizza-item--add">+</button>
+    </figure>
+  `
 }
 
 pizzaJson.forEach(function (item, index) {
-  pizzaArea.appendChild(card(item.img, item.name))
+  pizzaArea.innerHTML += card(item, index)
 })
