@@ -2,13 +2,14 @@ function Pessoa (nome, sobrenome, idade) {
   this.nome = nome
   this.sobrenome = sobrenome
   this.idade = idade
-  this.nomeCompleto = () => `${this.nome} ${this.sobrenome}`
 }
 
-// Pessoa.prototype.nomeCompleto = () => 
+Pessoa.prototype.nomeCompleto = () => 'Cópia >>> Leehaney Soares'
 
 const p1 = new Pessoa ('Leehaney', 'Soares', 25)
 const data = new Date()
+
+console.log(p1.nomeCompleto())
 
 console.log(Pessoa.prototype === p1.__proto__) // true -> São iguais tanto em conteúdo, quanto em tipos
 
@@ -34,3 +35,28 @@ const anoAtual = data.getFullYear()
 console.log(p1.calc(5, 6))
 console.log(p1.anoNasc(anoAtual, p1.idade))
 console.log(p1.toString())
+
+function Circle (string) {
+  this.str = string
+}
+
+const shape = {}
+const circle = new Circle('teste')
+
+/**
+ * Outra forma de atribuir algum dado no proto é utilizando __proto__, mas não é recomendado.
+ * Mas, dá pra fazer!
+ */
+shape.__proto__.circle = circle
+
+console.log(shape)
+
+function OtherObj () {
+}
+
+const obj = { nome: 'Teste', action: 'Eu vou para o proto' }
+const newObj = new OtherObj()
+
+newObj.__proto__.obj = obj
+
+console.log(newObj)
