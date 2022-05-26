@@ -47,16 +47,34 @@ const circle = new Circle('teste')
  * Outra forma de atribuir algum dado no proto é utilizando __proto__, mas não é recomendado.
  * Mas, dá pra fazer!
  */
-shape.__proto__.circle = circle
+// shape.__proto__.circle = circle
 
-console.log(shape)
+// console.log(shape)
 
-function OtherObj () {
+// function OtherObj () {
+// }
+
+// const obj = { nome: 'Teste', action: 'Eu vou para o proto' }
+// const newObj = new OtherObj()
+
+// newObj.__proto__.obj = obj
+
+// console.log(newObj)
+
+
+function Aluno (ra, nome, disciplinas, sala) {
+  this.ra = ra
+  this.nome = nome
+  this.disciplinas = disciplinas
+  this.sala = sala
+
+  this.action = () => 'Estudando computação....'
 }
 
-const obj = { nome: 'Teste', action: 'Eu vou para o proto' }
-const newObj = new OtherObj()
+Aluno.prototype.action = () => 'Não estou estudando e sim Procrastinando ;P'
 
-newObj.__proto__.obj = obj
+const disciplinas = ['engenharia de computadores', 'lógica de programação', 'banco de dados', 'POO']
 
-console.log(newObj)
+const aluno1 = new Aluno (12345, 'Leehaney', disciplinas, 10)
+
+console.log(aluno1.action())
