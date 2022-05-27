@@ -1,21 +1,51 @@
 import pizzaJson from './pizzas.js'
 
-const pizzaArea = document.querySelector('.pizza-area')
+const $ = element => document.querySelector(element)
+const pizzaArea = $('.pizza-area')
 
-function card (item) {
-  return `
-    <figure class="pizza-item" id="${item.id}">
-      <img class="pizza-item--img" src="./${item.img}" alt="${item.name}" />
-      <figcaption class="caption">
-        <span>R$ ${item.price.toFixed(2)}<span>
-        <strong>${item.name}</strong>
-        <p>${item.description}</p>
-      </figcaption>
-      <button class="pizza-item--add" type="submit">+</button>
-    </figure>
-  `
+function setValue (descriptor, props) {
+  const sizes = props.sizes
+
+  descriptor.querySelector('.pizzaBig img').src = props.img
+  descriptor.querySelector('.pizzaInfo h1').innerHTML = props.name
+  descriptor.querySelector('.pizzaInfo .pizzaInfo--desc').innerHTML = props.description
+  descriptor.querySelector('.pizzaInfo .pizzaInfo--actualPrice').innerHTML = `R$ ${props.price.toFixed(2)}`
+
+  sizes.forEach((size, index) =>
+    descriptor.querySelector(`.pizzaInfo--sizes [data-key="${index}"]`).innerHTML = size
+  )
+}
+
+function toggle (item) {
+  const modal = $('.pizzaWindowArea')
+  const timeModal = 10
+
+  modal.style.opcity = 0
+  modal.style.display = 'flex'
+  setTimeout(() => modal.style.opacity = 1, timeModal)
+
+  setValue(modal, item) // Função que seta os valores no modal de acordo com a pizza selecionada
 }
 
 pizzaJson.forEach(function (item, index) {
-  pizzaArea.innerHTML += card(item)
+  /**
+   * Clonando o nó modelo para ser utilizado repetitivamente
+   */
+  const pizzaItem = $('.models .pizza-item').cloneNode(true)
+  pizzaItem.setAttribute('data-key', index)
+  pizzaItem.querySelector('.pizza-item--img img').src = `./${item.img}`
+  pizzaItem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`
+  pizzaItem.querySelector('.pizza-item--name').innerHTML = item.name
+  pizzaItem.querySelector('.pizza-item--desc').innerHTML = item.description
+
+  pizzaItem.querySelector('.pizza-item a').addEventListener('click', (event) => {
+    event.preventDefault()
+    toggle(item) // Função que executa a ação de exibir o modal
+  })
+
+
+  /**
+   * nó.append() -> appenda mais de um elemento como filho do __nó__
+   */
+  pizzaArea.append(pizzaItem)
 })
