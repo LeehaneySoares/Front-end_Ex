@@ -3,16 +3,20 @@ import pizzaJson from './pizzas.js'
 const $ = element => document.querySelector(element)
 const pizzaArea = $('.pizza-area')
 
-function setValue (descriptor, props) {
+function changeSelected (modal) {
+
+}
+
+function setValue (modal, props) {
   const sizes = props.sizes
 
-  descriptor.querySelector('.pizzaBig img').src = props.img
-  descriptor.querySelector('.pizzaInfo h1').innerHTML = props.name
-  descriptor.querySelector('.pizzaInfo .pizzaInfo--desc').innerHTML = props.description
-  descriptor.querySelector('.pizzaInfo .pizzaInfo--actualPrice').innerHTML = `R$ ${props.price.toFixed(2)}`
+  modal.querySelector('.pizzaBig img').src = props.img
+  modal.querySelector('.pizzaInfo h1').innerHTML = props.name
+  modal.querySelector('.pizzaInfo .pizzaInfo--desc').innerHTML = props.description
+  modal.querySelector('.pizzaInfo .pizzaInfo--actualPrice').innerHTML = `R$ ${props.price.toFixed(2)}`
 
   sizes.forEach((size, index) =>
-    descriptor.querySelector(`.pizzaInfo--sizes [data-key="${index}"]`).innerHTML = size
+    modal.querySelector(`.pizzaInfo--sizes [data-key="${index}"]`).innerHTML = size
   )
 }
 
@@ -25,6 +29,7 @@ function toggle (item) {
   setTimeout(() => modal.style.opacity = 1, timeModal)
 
   setValue(modal, item) // Função que seta os valores no modal de acordo com a pizza selecionada
+  changeSelected(modal)
 }
 
 pizzaJson.forEach(function (item, index) {
