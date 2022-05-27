@@ -74,18 +74,23 @@ h1 {
 .pizza-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
 .pizza-item {
   align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px #ccc;
   display: flex;
   flex-direction: column;
   font-family: 'Hepta Slab', Helvetica, Arial;
   gap: 20px;
-  margin: 0 auto 50px auto;
-  max-width: 250px;
+  margin: 0 auto 5px auto;
+  padding: 20px;
   position: relative;
   text-align: center;
+  width: 100%;
 }
 
 .pizza-item .caption strong {
@@ -110,23 +115,26 @@ h1 {
 }
 
 .pizza-item--add {
+  align-items: center;
   line-height: 50%;
+  background-color: #388bc5;
   border: none;
   border-radius: 25px;
-  background-color: #388bc5;
+  display: flex;
+  justify-content: center;
   text-align: center;
   height: 50px;
   color: #FFF;
   font-size: 22px;
   cursor: pointer;
   position: absolute;
-  bottom: 160px;
-  transform: translate(0, 50%);
+  bottom: 190px;
+  transform: translate(150%, 50%);
   transition: all ease .2s;
   width: 50px;
 }
 
-.pizza-item .caption strong:hover .pizza-item--add {
+.pizza-item .pizza-item--add:hover {
   background-color: #244c88;
 }
 
@@ -150,17 +158,18 @@ h1 {
 }
 
 .pizzaWindowArea {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  display: none;
-  transition: all ease .5s;
-  justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  opacity: 0.5;
   overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all ease .5s;
 }
 
 .pizzaWindowBody {
