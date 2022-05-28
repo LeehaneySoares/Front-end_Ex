@@ -48,15 +48,22 @@ function changeQt (props) {
   pizzaQt.innerHTML = count
 
   inc.addEventListener('click', function () {
-    count += 1
+    count++
     priceActual = props.price * count
+
     price.innerHTML = `R$ ${priceActual.toFixed(2)}`
     pizzaQt.innerHTML = count
   })
   dec.addEventListener('click', function () {
-    count === 1
-      ? count = 1
-      : count -= 1
+    if (count === 1) {
+      count = 1
+      priceActual = props.price
+    } else {
+      count--
+      priceActual -= props.price
+    }
+
+    price.innerHTML = `R$ ${priceActual.toFixed(2)}`
     pizzaQt.innerHTML = count
   })
 
