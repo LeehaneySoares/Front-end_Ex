@@ -10,7 +10,7 @@ const pizzaArea = $('.pizza-area')
  * @param {*} size : ;
  */
 
-function changeSelected (size) {
+function changeTabs (size) {
   size.addEventListener('click', function () {
     $('.pizzaInfo--size.selected').classList.remove('selected')
     size.classList.add('selected')
@@ -33,21 +33,50 @@ function setValue (modal, props) {
       : false
     size.querySelector('span').innerHTML = props.sizes[index]
 
-    changeSelected(size)
+    changeTabs(size)
   })
 }
 
-function toggle (item, index) {
+function changeQt (props) {
+  let count = 1
+  let priceActual = props.price
+  const pizzaQt = $('.pizzaInfo--qt')
+  const inc = $('.pizzaInfo--qtmais')
+  const dec = $('.pizzaInfo--qtmenos')
+  const price = $('.pizzaInfo--actualPrice')
+
+  pizzaQt.innerHTML = count
+
+  inc.addEventListener('click', function () {
+    count += 1
+    priceActual = props.price * count
+    price.innerHTML = `R$ ${priceActual.toFixed(2)}`
+    pizzaQt.innerHTML = count
+  })
+  dec.addEventListener('click', function () {
+    count === 1
+      ? count = 1
+      : count -= 1
+    pizzaQt.innerHTML = count
+  })
+
+}
+
+function toggle (props) {
   const modal = $('.pizzaWindowArea')
   const timeModal = 10
   const buttonCancel = modal.querySelector('.pizzaInfo--cancelButton')
+  const buttonMobile = modal.querySelector('.pizzaInfo--cancelMobileButton')
 
   modal.style.opcity = 0
   modal.style.display = 'flex'
   setTimeout(() => modal.style.opacity = 1, timeModal)
 
-  setValue(modal, item, index) // Função que seta os valores no modal de acordo com a pizza selecionada
-  buttonCancel.addEventListener('click', () => modal.style.display = 'none')
+  setValue(modal, props) // Função que seta os valores no modal de acordo com a pizza selecionada
+  changeQt(props)
+
+  buttonCancel.addEventListener('click', () => modal.style.display = 'none') // Fecha o modal na versão Desk
+  buttonMobile.addEventListener('click', () => modal.style.display = 'none') // Fecha o modal no mobile
 }
 
 pizzaJson.forEach(function (item, index) {
