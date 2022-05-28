@@ -7,17 +7,17 @@ const pizzaArea = $('.pizza-area')
 /**
  * Função que altera o elemento de tamanho da pizza
  * Altera a cor do tamanho selecionado
- * @param {*} size : ;
+ * @param {*} size : Arrays com tamanho das pizzas;
  */
 
-function changeTabs (size) {
+function changeTabs(size) {
   size.addEventListener('click', function () {
     $('.pizzaInfo--size.selected').classList.remove('selected')
     size.classList.add('selected')
   })
 }
 
-function setValue (modal, props) {
+function setValue(modal, props) {
   modal.querySelector('.pizzaBig img').src = props.img
   modal.querySelector('.pizzaInfo h1').innerHTML = props.name
   modal.querySelector('.pizzaInfo--desc').innerHTML = props.description
@@ -37,7 +37,7 @@ function setValue (modal, props) {
   })
 }
 
-function changeQt (props) {
+function changeQt(props) {
   let count = 1
   let priceActual = props.price
   const pizzaQt = $('.pizzaInfo--qt')
@@ -69,7 +69,7 @@ function changeQt (props) {
 
 }
 
-function toggle (props) {
+function toggle(props) {
   const modal = $('.pizzaWindowArea')
   const timeModal = 10
   const buttonCancel = modal.querySelector('.pizzaInfo--cancelButton')
@@ -79,11 +79,14 @@ function toggle (props) {
   modal.style.display = 'flex'
   setTimeout(() => modal.style.opacity = 1, timeModal)
 
-  setValue(modal, props) // Função que seta os valores no modal de acordo com a pizza selecionada
-  changeQt(props)
+  // Eventos que fecham o modal tanto no desktop, quanto no mobile
+  buttonCancel.addEventListener('click', () => modal.style.display = 'none')
+  buttonMobile.addEventListener('click', () => modal.style.display = 'none')
 
-  buttonCancel.addEventListener('click', () => modal.style.display = 'none') // Fecha o modal na versão Desk
-  buttonMobile.addEventListener('click', () => modal.style.display = 'none') // Fecha o modal no mobile
+  // Função que seta os valores no modal de acordo com a pizza selecionada
+  setValue(modal, props)
+  // Função que altera o preço de acordo com a quantidade de pizzas
+  changeQt(props)
 }
 
 pizzaJson.forEach(function (item, index) {
