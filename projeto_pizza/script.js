@@ -41,52 +41,56 @@ function changeQt(props) {
   let count = 1
   let priceActual = props.price
   const pizzaQt = $('.pizzaInfo--qt')
-  const inc = $('.pizzaInfo--qtmais')
-  const dec = $('.pizzaInfo--qtmenos')
+  const buttonsQt = all('.pizzaInfo--qtmenos, .pizzaInfo--qtmais')
   const price = $('.pizzaInfo--actualPrice')
 
   pizzaQt.innerHTML = count
 
-  inc.addEventListener('click', function () {
-    count++
-    priceActual = props.price * count
+  buttonsQt.forEach(item => item.addEventListener('click', function (event) {
+    if (event.target.classList.contains('pizzaInfo--qtmais')) {
+      count++
+      priceActual = props.price * count
 
-    price.innerHTML = `R$ ${priceActual.toFixed(2)}`
-    pizzaQt.innerHTML = count
-  })
-  dec.addEventListener('click', function () {
-    if (count === 1) {
-      count = 1
-      priceActual = props.price
-    } else {
-      count--
-      priceActual -= props.price
+      price.innerHTML = `R$ ${priceActual.toFixed(2)}`
+      pizzaQt.innerHTML = count
     }
+    else {
+      if (count > 1) {
+        count--
+        priceActual -= props.price
+      }
+        price.innerHTML = `R$ ${priceActual.toFixed(2)}`
+        pizzaQt.innerHTML = count
 
-    price.innerHTML = `R$ ${priceActual.toFixed(2)}`
-    pizzaQt.innerHTML = count
-  })
-
+        console.log(price, pizzaQt)
+    }
+  }))
 }
 
 function toggle(props) {
   const modal = $('.pizzaWindowArea')
+  const cancelButton = all('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton')
   const timeModal = 10
-  const buttonCancel = modal.querySelector('.pizzaInfo--cancelButton')
-  const buttonMobile = modal.querySelector('.pizzaInfo--cancelMobileButton')
 
   modal.style.opcity = 0
   modal.style.display = 'flex'
   setTimeout(() => modal.style.opacity = 1, timeModal)
 
-  // Eventos que fecham o modal tanto no desktop, quanto no mobile
-  buttonCancel.addEventListener('click', () => modal.style.display = 'none')
-  buttonMobile.addEventListener('click', () => modal.style.display = 'none')
-
   // Função que seta os valores no modal de acordo com a pizza selecionada
   setValue(modal, props)
+
   // Função que altera o preço de acordo com a quantidade de pizzas
   changeQt(props)
+
+  // Função para adicionar o produto no carrinho
+  addCart(props)
+
+  function closeModal () {
+    modal.style.opacity = 0
+    setTimeout(() => modal.style.display = 'none', timeModal)
+  }
+
+  cancelButton.forEach(item => item.addEventListener('click', closeModal))
 }
 
 pizzaJson.forEach(function (item, index) {
