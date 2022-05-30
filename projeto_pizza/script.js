@@ -3,6 +3,8 @@ import pizzaJson from './pizzas.js'
 const $ = element => document.querySelector(element)
 const all = element => document.querySelectorAll(element)
 const pizzaArea = $('.pizza-area')
+const cart = []
+let pizzaId = ''
 
 /**
  * Função que altera o elemento de tamanho da pizza
@@ -59,22 +61,21 @@ function changeQt(props) {
         count--
         priceActual -= props.price
       }
-        price.innerHTML = `R$ ${priceActual.toFixed(2)}`
-        pizzaQt.innerHTML = count
-
-        console.log(price, pizzaQt)
+      price.innerHTML = `R$ ${priceActual.toFixed(2)}`
+      pizzaQt.innerHTML = count
     }
+    return count
   }))
 }
 
-function toggle(props) {
+function openModal(props) {
+  pizzaId = parseInt(props.id)
   const modal = $('.pizzaWindowArea')
   const cancelButton = all('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton')
-  const timeModal = 10
 
   modal.style.opcity = 0
   modal.style.display = 'flex'
-  setTimeout(() => modal.style.opacity = 1, timeModal)
+  setTimeout(() => modal.style.opacity = 1, 200)
 
   // Função que seta os valores no modal de acordo com a pizza selecionada
   setValue(modal, props)
@@ -82,15 +83,13 @@ function toggle(props) {
   // Função que altera o preço de acordo com a quantidade de pizzas
   changeQt(props)
 
-  // Função para adicionar o produto no carrinho
-  addCart(props)
+  cancelButton.forEach(item => item.addEventListener('click', () => closeModal()))
+}
 
-  function closeModal () {
-    modal.style.opacity = 0
-    setTimeout(() => modal.style.display = 'none', timeModal)
-  }
-
-  cancelButton.forEach(item => item.addEventListener('click', closeModal))
+function closeModal () {
+  const modal = $('.pizzaWindowArea')
+  modal.style.opacity = 0
+  setTimeout(() => modal.style.display = 'none', 200)
 }
 
 pizzaJson.forEach(function (item, index) {
@@ -106,11 +105,25 @@ pizzaJson.forEach(function (item, index) {
 
   pizzaItem.querySelector('.pizza-item a').addEventListener('click', (event) => {
     event.preventDefault()
-    toggle(item, index) // Função que executa a ação de exibir o modal
+    openModal(item, index) // Função que executa a ação de exibir o modal
   })
 
   /**
    * nó.append() -> appenda mais de um elemento como filho do __nó__
    */
   pizzaArea.append(pizzaItem)
+})
+
+$('.pizzaInfo--addButton').addEventListener('click', function () {
+  closeModal()
+  const qtPizza = parseInt($('.pizzaInfo--qt').innerHTML)
+  const sizePizza = parseInt($('.pizzaInfo--size.selected').getAttribute('data-key'))
+
+  const identifier = `${pizzaJson[pizzaId - 1].id}*${sizePizza}`
+
+  const key = cart.findIndex(item => item.key === identifier)
+
+  key != -1
+    ? cart[key].qt += qtPizza
+    : cart.push({ key: identifier, id: pizzaId, size: sizePizza, qt: qtPizza })
 })
