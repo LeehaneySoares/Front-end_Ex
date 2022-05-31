@@ -4,7 +4,7 @@ const $ = element => document.querySelector(element)
 const all = element => document.querySelectorAll(element)
 const pizzaArea = $('.pizza-area')
 const cart = []
-let pizzaId = ''
+let pizzaId = 0
 
 /**
  * Função que altera o elemento de tamanho da pizza
@@ -86,7 +86,7 @@ function openModal(props) {
   cancelButton.forEach(item => item.addEventListener('click', () => closeModal()))
 }
 
-function closeModal () {
+function closeModal() {
   const modal = $('.pizzaWindowArea')
   modal.style.opacity = 0
   setTimeout(() => modal.style.display = 'none', 200)
@@ -114,16 +114,40 @@ pizzaJson.forEach(function (item, index) {
   pizzaArea.append(pizzaItem)
 })
 
+/**
+ * Evento que é disparado ao adicionar pizzas no carrinho
+ */
 $('.pizzaInfo--addButton').addEventListener('click', function () {
-  closeModal()
   const qtPizza = parseInt($('.pizzaInfo--qt').innerHTML)
   const sizePizza = parseInt($('.pizzaInfo--size.selected').getAttribute('data-key'))
-
   const identifier = `${pizzaJson[pizzaId - 1].id}*${sizePizza}`
-
   const key = cart.findIndex(item => item.key === identifier)
 
   key != -1
     ? cart[key].qt += qtPizza
     : cart.push({ key: identifier, id: pizzaId, size: sizePizza, qt: qtPizza })
+
+  closeModal()
+  updateCart(cart)
 })
+
+function updateCart (cart) {
+  if (cart.length != 0) {
+    $('aside').classList.add('show')
+
+    cart.map(item => {
+      let pizzaItem = pizzaJson.find(pizza => pizza.id === item.id)
+      let cartItem = $('.models .cart--item').cloneNode(true)
+
+      cartItem.querySelector('img').src = pizzaItem.img
+      cartItem.querySelector('.cart--item-nome').innerHTML = pizzaItem.name
+      console.log(cartItem, pizzaItem)
+    })
+
+
+  } else {
+    $('aside').classList.remove('show')
+  }
+
+
+}
