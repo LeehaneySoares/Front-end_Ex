@@ -113,17 +113,28 @@ Produto.prototype.aumento = function (percentual) {
   this.preco = this.preco + (this.preco * (percentual / 100))
 }
 
-const p1 = new Produto ('camiseta', 40)
+// const p1 = new Produto ('camiseta', 40)
 
-p1.desconto(50)
+// p1.desconto(50)
 
-const p2 = {
-  nome: 'caneca',
-  preco: 20
-}
+// const p2 = {
+//   nome: 'caneca',
+//   preco: 20
+// }
 
-Object.setPrototypeOf(p2, Produto.prototype)
+// Object.setPrototypeOf(p2, Produto.prototype)
 
-p2.aumento(20)
+// p2.aumento(20)
 
-console.log(p2)
+// console.log(p2)
+
+const p3 = Object.create(Produto.prototype)
+
+p3.nome = 'Teste'
+p3.preco = 10
+
+p3.aumento(10)
+
+console.log(p3)
+
+
