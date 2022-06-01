@@ -27,3 +27,12 @@ console.log(x, y)
 const [a, b] = [y, x]
 
 console.log(a, b)
+
+/**
+* TODO:// Apenas testando a função copyWithin()
+*/
+const numbers = [1, 2, 3, 4, 5]
+const otherNumber = [6, 7, 8, 9]
+const newArray = numbers.copyWithin(1, 3)
+
+console.log(newArray)
