@@ -78,3 +78,25 @@ const disciplinas = ['engenharia de computadores', 'lógica de programação', '
 const aluno1 = new Aluno (12345, 'Leehaney', disciplinas, 10)
 
 console.log(aluno1.action())
+
+
+/**
+ * Setando prototypes em determinados objetos
+ */
+const objA = {
+  chave: 'A',
+  teste: () => console.log('Faço parte de A')
+}
+
+const objB = {
+  chave: 'B',
+  fake: 'Fake'
+}
+
+const objC = {
+  chave: 'C'
+}
+
+Object.setPrototypeOf(objB, objA)
+Object.setPrototypeOf(objC, objB)
+
