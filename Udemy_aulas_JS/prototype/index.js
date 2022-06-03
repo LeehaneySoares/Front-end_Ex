@@ -128,13 +128,27 @@ Produto.prototype.aumento = function (percentual) {
 
 // console.log(p2)
 
-const p3 = Object.create(Produto.prototype)
+const p3 = Object.create(Produto.prototype, {
+  tamanho: {
+    enumerable: true,
+    value: '10x40cm',
+    writable: true,
+    configurable: false
+  },
+  nome: {
+    enumerable: true,
+    value: 'Playstation 5',
+    writable: false,
+    configurable: false
+  },
+  preco: {
+    enumerable: true,
+    value: 5000,
+    writable: true,
+    configurable: false
+  }
+})
 
-p3.nome = 'Teste'
-p3.preco = 10
-
-p3.aumento(10)
+p3.aumento(25)
 
 console.log(p3)
-
-
