@@ -100,55 +100,57 @@
 // Object.setPrototypeOf(objB, objA)
 // Object.setPrototypeOf(objC, objB)
 
-function Produto (nome, preco) {
-  this.nome = nome
-  this.preco = preco
-}
-
-Produto.prototype.desconto = function (percentual) {
-  this.preco = this.preco - (this.preco * (percentual / 100))
-}
-
-Produto.prototype.aumento = function (percentual) {
-  this.preco = this.preco + (this.preco * (percentual / 100))
-}
-
-// const p1 = new Produto ('camiseta', 40)
-
-// p1.desconto(50)
-
-// const p2 = {
-//   nome: 'caneca',
-//   preco: 20
+// function Produto (nome, preco) {
+//   this.nome = nome
+//   this.preco = preco
 // }
 
-// Object.setPrototypeOf(p2, Produto.prototype)
+// Produto.prototype.desconto = function (percentual) {
+//   this.preco = this.preco - (this.preco * (percentual / 100))
+// }
 
-// p2.aumento(20)
+// Produto.prototype.aumento = function (percentual) {
+//   this.preco = this.preco + (this.preco * (percentual / 100))
+// }
 
-// console.log(p2)
+// // const p1 = new Produto ('camiseta', 40)
 
-const p3 = Object.create(Produto.prototype, {
-  tamanho: {
-    enumerable: true,
-    value: '10x40cm',
-    writable: true,
-    configurable: false
-  },
-  nome: {
-    enumerable: true,
-    value: 'Playstation 5',
-    writable: false,
-    configurable: false
-  },
-  preco: {
-    enumerable: true,
-    value: 5000,
-    writable: true,
-    configurable: false
-  }
-})
+// // p1.desconto(50)
 
-p3.aumento(25)
+// // const p2 = {
+// //   nome: 'caneca',
+// //   preco: 20
+// // }
 
-console.log(p3)
+// // Object.setPrototypeOf(p2, Produto.prototype)
+
+// // p2.aumento(20)
+
+// // console.log(p2)
+
+// const p3 = Object.create(Produto.prototype, {
+//   tamanho: {
+//     enumerable: true,
+//     value: '10x40cm',
+//     writable: true,
+//     configurable: false
+//   },
+//   nome: {
+//     enumerable: true,
+//     value: 'Playstation 5',
+//     writable: false,
+//     configurable: false
+//   },
+//   preco: {
+//     enumerable: true,
+//     value: 5000,
+//     writable: true,
+//     configurable: false
+//   }
+// })
+
+// p3.aumento(25)
+
+// console.log(p3)
+
+//--------------------------------------------------------//
