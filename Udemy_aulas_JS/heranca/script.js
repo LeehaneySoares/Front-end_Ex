@@ -33,8 +33,20 @@ function Carro (nome, preco, ano, cor) {
 Carro.prototype = Object.create(Produto.prototype)
 Carro.prototype.constructor = Carro
 
-const carro1 = new Carro('HB20', 240, 2021)
+//Subscrevendo o método automento e desconto em Carro
 
-// carro1.aumento(200)
+Carro.prototype.aumento = function (percentual) {
+  return this.preco = this.preco + (this.preco * (percentual / 100))
+}
+
+Carro.prototype.desconto = function (percentual) {
+  return this.preco = this.preco - (this.preco * (percentual / 100))
+}
+
+const carro1 = new Carro('HB20', 40000, 2021)
+
+// carro1.aumento(20)
+carro1.desconto(50)
+
 
 console.log(carro1)
