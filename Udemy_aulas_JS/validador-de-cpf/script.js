@@ -47,10 +47,10 @@ ValidaCpf.prototype.valida = function () {
   return this.cpfLimpo === novoCpf
 }
 
-// ValidaCpf.prototype.formula = function (total) {
-//   const digito = 11 - (total % 11)
-//   return digito > 9 ? 0 : digito
-// }
+ValidaCpf.prototype.formula = function (total) {
+  const digito = 11 - (total % 11)
+  return digito > 9 ? 0 : digito
+}
 
 // ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
 //   const cpfArray = [...cpfParcial]
