@@ -1,0 +1,38 @@
+html, body, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+  width: 500px;
+}
+
+.form input {
+  border: 2px solid #000;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.form button {
+  height: 25px;
+  width: 100px;
+}
+
+.form.result {
+  display: none;
+  font-size: 50px;
+  font-weight: bold;
+}
