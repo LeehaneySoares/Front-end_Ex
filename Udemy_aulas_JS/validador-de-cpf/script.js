@@ -34,18 +34,18 @@
   })
 }
 
-// ValidaCpf.prototype.valida = function () {
-//   if (typeof this.cpfLimpo === 'undefined') return false
-//   if (this.cpfLimpo.length !== 11) return false
-//  	if (this.isSequencia()) return false
+ValidaCpf.prototype.valida = function () {
+  if (typeof this.cpfLimpo === 'undefined') return false
+  if (this.cpfLimpo.length !== 11) return false
+ 	if (this.isSequencia()) return false
 
-//   const cpfParcial = this.cpfLimpo.slice(0, -2)
-//   const digito1 = this.obtemDigito(cpfParcial)
-//   const digito2 = this.obtemDigito(cpfParcial + digito1)
-//   const novoCpf = `${cpfParcial}${digito1}${digito2}`
+  const cpfParcial = this.cpfLimpo.slice(0, -2)
+  const digito1 = this.obtemDigito(cpfParcial)
+  const digito2 = this.obtemDigito(cpfParcial + digito1)
+  const novoCpf = `${cpfParcial}${digito1}${digito2}`
 
-//   return this.cpfLimpo === novoCpf
-// }
+  return this.cpfLimpo === novoCpf
+}
 
 // ValidaCpf.prototype.formula = function (total) {
 //   const digito = 11 - (total % 11)
