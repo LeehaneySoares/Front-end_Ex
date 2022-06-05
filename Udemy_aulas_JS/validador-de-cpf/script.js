@@ -68,20 +68,20 @@ ValidaCpf.prototype.isSequencia = function () {
 	return this.cpfLimpo === sequencia
 }
 
-// const button = document.querySelector('button')
-// const result = document.querySelector('.form .result')
+const button = document.querySelector('button')
+const result = document.querySelector('.form .result')
 
-// button.onclick = (event) => {
-//   event.preventDefault()
-//   const inputValue = document.querySelector('input').value
-//   const cpf = new ValidaCpf(inputValue)
+button.onclick = (event) => {
+  event.preventDefault()
+  const inputValue = document.querySelector('input').value
+  const cpf = new ValidaCpf(inputValue)
 
-//   if (cpf.valida()) {
-//     successMessage()
-//   } else {
-//     failMessage()
-//   }
-// }
+  if (cpf.valida()) {
+    successMessage()
+  } else {
+    failMessage()
+  }
+}
 
 // function successMessage () {
 //   setTimeout(() => {
