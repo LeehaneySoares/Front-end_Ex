@@ -83,14 +83,14 @@ button.onclick = (event) => {
   }
 }
 
-// function successMessage () {
-//   setTimeout(() => {
-//     result.style.display = 'none'
-//   }, 2000)
-//   result.textContent = 'CPF válido!'
-//   result.style.display = 'block'
-//   result.style.color = 'green'
-// }
+function successMessage () {
+  setTimeout(() => {
+    result.style.display = 'none'
+  }, 2000)
+  result.textContent = 'CPF válido!'
+  result.style.display = 'block'
+  result.style.color = 'green'
+}
 
 // function failMessage () {
 //   setTimeout(() => {
