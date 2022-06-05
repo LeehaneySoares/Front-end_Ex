@@ -52,16 +52,16 @@ ValidaCpf.prototype.formula = function (total) {
   return digito > 9 ? 0 : digito
 }
 
-// ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
-//   const cpfArray = [...cpfParcial]
-//   let valorInicial = cpfParcial.length + 1;
-//   const total = cpfArray.reduce((acc, item) => {
-//     acc += valorInicial * Number(item)
-//     valorInicial--
-//     return acc
-//   }, 0)
-//   return this.formula(total)
-// }
+ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
+  const cpfArray = [...cpfParcial]
+  let valorInicial = cpfParcial.length + 1;
+  const total = cpfArray.reduce((acc, item) => {
+    acc += valorInicial * Number(item)
+    valorInicial--
+    return acc
+  }, 0)
+  return this.formula(total)
+}
 
 // ValidaCpf.prototype.isSequencia = function () {
 //   const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
