@@ -63,10 +63,10 @@ ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
   return this.formula(total)
 }
 
-// ValidaCpf.prototype.isSequencia = function () {
-//   const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
-// 	return this.cpfLimpo === sequencia
-// }
+ValidaCpf.prototype.isSequencia = function () {
+  const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
+	return this.cpfLimpo === sequencia
+}
 
 // const button = document.querySelector('button')
 // const result = document.querySelector('.form .result')
