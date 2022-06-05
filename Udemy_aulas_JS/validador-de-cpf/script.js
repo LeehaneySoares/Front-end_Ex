@@ -34,69 +34,69 @@
   })
 }
 
-ValidaCpf.prototype.valida = function () {
-  if (typeof this.cpfLimpo === 'undefined') return false
-  if (this.cpfLimpo.length !== 11) return false
- 	if (this.isSequencia()) return false
+// ValidaCpf.prototype.valida = function () {
+//   if (typeof this.cpfLimpo === 'undefined') return false
+//   if (this.cpfLimpo.length !== 11) return false
+//  	if (this.isSequencia()) return false
 
-  const cpfParcial = this.cpfLimpo.slice(0, -2)
-  const digito1 = this.obtemDigito(cpfParcial)
-  const digito2 = this.obtemDigito(cpfParcial + digito1)
-  const novoCpf = `${cpfParcial}${digito1}${digito2}`
+//   const cpfParcial = this.cpfLimpo.slice(0, -2)
+//   const digito1 = this.obtemDigito(cpfParcial)
+//   const digito2 = this.obtemDigito(cpfParcial + digito1)
+//   const novoCpf = `${cpfParcial}${digito1}${digito2}`
 
-  return this.cpfLimpo === novoCpf
-}
+//   return this.cpfLimpo === novoCpf
+// }
 
-ValidaCpf.prototype.formula = function (total) {
-  const digito = 11 - (total % 11)
-  return digito > 9 ? 0 : digito
-}
+// ValidaCpf.prototype.formula = function (total) {
+//   const digito = 11 - (total % 11)
+//   return digito > 9 ? 0 : digito
+// }
 
-ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
-  const cpfArray = [...cpfParcial]
-  let valorInicial = cpfParcial.length + 1;
-  const total = cpfArray.reduce((acc, item) => {
-    acc += valorInicial * Number(item)
-    valorInicial--
-    return acc
-  }, 0)
-  return this.formula(total)
-}
+// ValidaCpf.prototype.obtemDigito = function (cpfParcial) {
+//   const cpfArray = [...cpfParcial]
+//   let valorInicial = cpfParcial.length + 1;
+//   const total = cpfArray.reduce((acc, item) => {
+//     acc += valorInicial * Number(item)
+//     valorInicial--
+//     return acc
+//   }, 0)
+//   return this.formula(total)
+// }
 
-ValidaCpf.prototype.isSequencia = function () {
-  const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
-	return this.cpfLimpo === sequencia
-}
+// ValidaCpf.prototype.isSequencia = function () {
+//   const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
+// 	return this.cpfLimpo === sequencia
+// }
 
-const button = document.querySelector('button')
-const result = document.querySelector('.form .result')
+// const button = document.querySelector('button')
+// const result = document.querySelector('.form .result')
 
-button.onclick = (event) => {
-  event.preventDefault()
-  const inputValue = document.querySelector('input').value
-  const cpf = new ValidaCpf(inputValue)
+// button.onclick = (event) => {
+//   event.preventDefault()
+//   const inputValue = document.querySelector('input').value
+//   const cpf = new ValidaCpf(inputValue)
 
-  if (cpf.valida()) {
-    successMessage()
-  } else {
-    failMessage()
-  }
-}
+//   if (cpf.valida()) {
+//     successMessage()
+//   } else {
+//     failMessage()
+//   }
+// }
 
-function successMessage () {
-  setTimeout(() => {
-    result.style.display = 'none'
-  }, 2000)
-  result.textContent = 'CPF válido!'
-  result.style.display = 'block'
-  result.style.color = 'green'
-}
+// function successMessage () {
+//   setTimeout(() => {
+//     result.style.display = 'none'
+//   }, 2000)
+//   result.textContent = 'CPF válido!'
+//   result.style.display = 'block'
+//   result.style.color = 'green'
+// }
 
-function failMessage () {
-  setTimeout(() => {
-    result.style.display = 'none'
-  }, 2000)
-  result.textContent = 'CPF inválido!'
-  result.style.display = 'block'
-  result.style.color = 'red'
-}
+// function failMessage () {
+//   setTimeout(() => {
+//     result.style.display = 'none'
+//   }, 2000)
+//   result.textContent = 'CPF inválido!'
+//   result.style.display = 'block'
+//   result.style.color = 'red'
+// }
