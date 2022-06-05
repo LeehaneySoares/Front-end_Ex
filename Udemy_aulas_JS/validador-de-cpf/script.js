@@ -92,11 +92,11 @@ function successMessage () {
   result.style.color = 'green'
 }
 
-// function failMessage () {
-//   setTimeout(() => {
-//     result.style.display = 'none'
-//   }, 2000)
-//   result.textContent = 'CPF inválido!'
-//   result.style.display = 'block'
-//   result.style.color = 'red'
-// }
+function failMessage () {
+  setTimeout(() => {
+    result.style.display = 'none'
+  }, 2000)
+  result.textContent = 'CPF inválido!'
+  result.style.display = 'block'
+  result.style.color = 'red'
+}
