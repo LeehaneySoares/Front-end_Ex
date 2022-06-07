@@ -22,6 +22,7 @@ ContaCorrente.prototype.sacar = function (value) {
   }
 }
 
-const conta1 = new ContaCorrente(7131, 249620, 5000)
+const conta1 = new ContaCorrente(7131, 249620, 5000, 'premium')
 
-console.log(conta1.sacar(1000))
+conta1.pacote = 'Gold'
+console.log(conta1)
