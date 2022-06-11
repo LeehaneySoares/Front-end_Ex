@@ -132,7 +132,13 @@ $('.pizzaInfo--addButton').addEventListener('click', function () {
 })
 
 function updateCart (cart) {
+  const mobile = $('.menu-openner')
+  mobile.querySelector('span').innerHTML = cart.length
+
   if (cart.length > 0) {
+    mobile.addEventListener('click', function () {
+      $('aside').style.left = 0
+    })
     const cartDiv = $('.cart')
     const labelSizes = ['(P)', '(M)', '(G)']
     let subtotal = 0
@@ -180,5 +186,6 @@ function updateCart (cart) {
 
   $('.menu-closer').addEventListener('click', () => {
     $('aside').classList.remove('show')
+    $('aside').style.left = '100vw'
   })
 }
