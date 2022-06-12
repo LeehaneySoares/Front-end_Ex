@@ -1,6 +1,8 @@
+import { $ } from './shortcuts.js'
+
 class Card {
-  #figure
   #description
+  #figure
   #img
   #name
   #price
@@ -36,21 +38,16 @@ class Card {
     this.#name = pizza.name
     this.#price = pizza.price.toFixed(2)
     this.#sizes = pizza.sizes
-    this.#figure = this.mount()
+    this.mount()
   }
 
   mount () {
-    return `
-      <figure class="pizza-item">
-        <a href="">
-          <div class="pizza-item--img"><img src=${this.img} /></div>
-          <div class="pizza-item--add">+</div>
-        </a>
-        <div class="pizza-item--price">R$ ${this.price}</div>
-        <div class="pizza-item--name">${this.name}</div>
-        <div class="pizza-item--desc">${this.description}</div>
-      </figure>
-    `
+    this.#figure = $('.models .pizza-item').cloneNode(true)
+    this.#figure.querySelector('img').src = this.img
+    this.#figure.querySelector('.pizza-item--price').innerHTML = `R$ ${this.price}`
+    this.#figure.querySelector('.pizza-item--name').innerHTML = this.name
+    this.#figure.querySelector('.pizza-item--desc').innerHTML = this.description
+    return this
   }
 
   static create (pizza) {
