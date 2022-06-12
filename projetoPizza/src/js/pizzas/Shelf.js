@@ -1,19 +1,14 @@
 import Card from './Card.js'
 
 class Shelf {
-  #pizzas
   #cards
 
-  get pizzas () {
-    return this.#pizzas
-  }
-
   get cards () {
-    return this.#cards ??= this.pizzas.map(pizza => Card.create(pizza))
+    return this.#cards
   }
 
   constructor (pizzas) {
-    this.#pizzas = pizzas
+    this.#cards = pizzas.map(pizza => Card.create(pizza))
   }
 
   static create (pizzas) {
