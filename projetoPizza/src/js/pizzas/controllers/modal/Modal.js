@@ -2,7 +2,6 @@ import { $ } from '../scripts/shortcuts.js'
 import Display from './Display.js'
 
 class Modal {
-  #display
   #modal
   #parent
 
@@ -12,7 +11,7 @@ class Modal {
 
   constructor (parent) {
     this.#parent = parent
-    this.#display = Display.create(this, this.#parent)
+    Display.create(this, this.#parent)
   }
 
   open () {
