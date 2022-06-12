@@ -1,6 +1,8 @@
 import { $ } from '../scripts/shortcuts.js'
+import Display from './Display.js'
 
 class Modal {
+  #display
   #modal
   #parent
 
@@ -10,7 +12,7 @@ class Modal {
 
   constructor (parent) {
     this.#parent = parent
-    console.log(parent)
+    this.#display = Display.create(this, this.#parent)
   }
 
   open () {
@@ -21,8 +23,8 @@ class Modal {
   }
 
   close () {
-    modal.style.opacity = 0
-    setTimeout(() => modal.style.display = 'none', 200)
+    this.modal.style.opacity = 0
+    setTimeout(() => this.modal.style.display = 'none', 200)
     return this
   }
 

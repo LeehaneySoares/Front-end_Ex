@@ -1,5 +1,5 @@
-import { $ } from './scripts/shortcuts.js'
-import Modal from './controllers/Modal.js'
+import { $ } from './controllers/scripts/shortcuts.js'
+import Modal from './controllers/modal/Modal.js'
 
 class Card {
   #description
