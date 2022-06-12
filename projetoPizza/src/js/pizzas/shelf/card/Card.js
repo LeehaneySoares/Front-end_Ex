@@ -1,5 +1,6 @@
-import { $ } from './controllers/scripts/shortcuts.js'
-import Modal from './controllers/modal/Modal.js'
+import { $ } from '../../controllers/scripts/shortcuts.js'
+import Modal from '../modal/Modal.js'
+import mount from './mount.js'
 
 class Card {
   #description
@@ -44,16 +45,7 @@ class Card {
     this.#name = pizza.name
     this.#price = pizza.price.toFixed(2)
     this.#sizes = pizza.sizes
-    this.mount()
-  }
-
-  mount () {
-    this.figure.querySelector('img').src = this.img
-    this.figure.querySelector('.pizza-item--price').innerHTML = `R$ ${this.price}`
-    this.figure.querySelector('.pizza-item--name').innerHTML = this.name
-    this.figure.querySelector('.pizza-item--desc').innerHTML = this.description
-    this.figure.querySelector('.pizza-item a').addEventListener('click', (event) => this.openModal(event))
-    return this
+    mount(this, this.figure)
   }
 
   openModal (event) {

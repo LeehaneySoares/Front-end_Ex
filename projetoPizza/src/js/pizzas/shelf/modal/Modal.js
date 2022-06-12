@@ -1,4 +1,6 @@
-import { $ } from '../scripts/shortcuts.js'
+import { $ } from '../../controllers/scripts/shortcuts.js'
+import appendInfo from './actions/appendInfo.js'
+import cancelButton from './actions/cancelButton.js'
 import Display from './Display.js'
 
 class Modal {
@@ -10,8 +12,8 @@ class Modal {
   }
 
   constructor (parent) {
-    this.#parent = parent
-    Display.create(this, this.#parent)
+    appendInfo(parent)
+    cancelButton(this)
   }
 
   open () {

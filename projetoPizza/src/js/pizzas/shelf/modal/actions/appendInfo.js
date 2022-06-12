@@ -1,4 +1,4 @@
-import { $ } from '../../scripts/shortcuts.js'
+import { $ } from '../../../controllers/scripts/shortcuts.js'
 
 const pizzaInfo = $('.pizzaInfo')
 

@@ -1,4 +1,4 @@
-import Card from './Card.js'
+import Card from './card/Card.js'
 
 class Shelf {
   #cards
