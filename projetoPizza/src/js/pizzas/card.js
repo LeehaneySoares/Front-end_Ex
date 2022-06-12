@@ -47,6 +47,12 @@ class Card {
     this.#figure.querySelector('.pizza-item--price').innerHTML = `R$ ${this.price}`
     this.#figure.querySelector('.pizza-item--name').innerHTML = this.name
     this.#figure.querySelector('.pizza-item--desc').innerHTML = this.description
+    this.#figure.querySelector('.pizza-item a').addEventListener('click', (event) => this.openModal(event))
+    return this
+  }
+
+  openModal (event) {
+    event.preventDefault()
     return this
   }
 
