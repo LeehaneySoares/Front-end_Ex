@@ -1,7 +1,6 @@
 import pizzaJson from './pizzas.js'
+import { $, all } from './shortcut.js'
 
-const $ = element => document.querySelector(element)
-const all = element => document.querySelectorAll(element)
 const pizzaArea = $('.pizza-area')
 const cart = []
 let pizzaId = 0
