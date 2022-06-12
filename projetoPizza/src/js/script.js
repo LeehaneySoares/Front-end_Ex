@@ -1,5 +1,4 @@
 import build from './build.js'
-import { $ } from './pizzas/shortcuts.js'
+import { $ } from './pizzas/scripts/shortcuts.js'
 
-const pizzaArea = $('.pizza-area')
-build.forEach(card => pizzaArea.append(card.figure))
+build.forEach(card => $('.pizza-area').append(card.figure))

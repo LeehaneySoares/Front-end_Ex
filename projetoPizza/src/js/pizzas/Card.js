@@ -1,23 +1,29 @@
-import { $ } from './shortcuts.js'
+import { $ } from './scripts/shortcuts.js'
+import Modal from './controllers/Modal.js'
 
 class Card {
   #description
   #figure
   #img
+  #modal
   #name
   #price
   #sizes
-
-  get figure () {
-    return this.#figure
-  }
 
   get description () {
     return this.#description
   }
 
+  get figure () {
+    return this.#figure ??= $('.models .pizza-item').cloneNode(true)
+  }
+
   get img () {
     return this.#img
+  }
+
+  get modal () {
+    return this.#modal ??= Modal.create(this)
   }
 
   get name () {
@@ -42,17 +48,17 @@ class Card {
   }
 
   mount () {
-    this.#figure = $('.models .pizza-item').cloneNode(true)
-    this.#figure.querySelector('img').src = this.img
-    this.#figure.querySelector('.pizza-item--price').innerHTML = `R$ ${this.price}`
-    this.#figure.querySelector('.pizza-item--name').innerHTML = this.name
-    this.#figure.querySelector('.pizza-item--desc').innerHTML = this.description
-    this.#figure.querySelector('.pizza-item a').addEventListener('click', (event) => this.openModal(event))
+    this.figure.querySelector('img').src = this.img
+    this.figure.querySelector('.pizza-item--price').innerHTML = `R$ ${this.price}`
+    this.figure.querySelector('.pizza-item--name').innerHTML = this.name
+    this.figure.querySelector('.pizza-item--desc').innerHTML = this.description
+    this.figure.querySelector('.pizza-item a').addEventListener('click', (event) => this.openModal(event))
     return this
   }
 
   openModal (event) {
     event.preventDefault()
+    this.modal.open()
     return this
   }
 
