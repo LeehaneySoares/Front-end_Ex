@@ -7,7 +7,7 @@ function VideoGame (marca, modelo, rom, tela, ...jogos) {
   Object.defineProperties(this, {
     marca: {
       get: () => marca,
-      set: (value) => marca = value.replace('NY', '')
+      set: (value) => marca = value.replace('', '')
     },
     modelo: {
       get: () => modelo,
