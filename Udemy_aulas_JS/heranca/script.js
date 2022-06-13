@@ -124,12 +124,21 @@ class DispositivoEletronico {
 // Iremos utilizar o super quando queremos passar algo específico
 class Celular extends DispositivoEletronico {}
 
-const d1 = new Celular('Samsung s10+', false)
+class Nokia1000 extends Celular {}
 
-d1.desligar()
-d1.desligar()
+/**
+ * Posso fazer heranças quantas vezes que eu quiser, o problema é que a classe
+ * vai ficando mais especializada e mais complexa
+ *
+ * Com isso, caso algum membro ou atributo não tenha no prototype do pai, ele irá para o prototype do "avô", e com isso, ele vai subindo a cadeia das heranças,
+ * até encontrar o que satifaz a condição
+ */
 
-console.log(d1)
+const c1 = new Nokia1000('modelo: 1000', false)
 
+c1.desligar()
+c1.desligar()
+
+console.log(c1)
 
 
