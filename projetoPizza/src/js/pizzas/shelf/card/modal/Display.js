@@ -4,19 +4,25 @@ import cancelButton from './actions/cancelButton.js'
 class Display {
   #modal
 
-  constructor (modal, props) {
+  get modal () {
+    return this.#modal
+  }
+
+  constructor (modal) {
     this.#modal = modal
-    appendInfo(props)
     this.cancel()
   }
 
   cancel () {
-    cancelButton(this.#modal)
+    cancelButton(this.modal)
     return this
   }
 
   static create (modal, props) {
-    return new Display(modal, props)
+    return new Display(
+      modal,
+      appendInfo(props)
+    )
   }
 }
 

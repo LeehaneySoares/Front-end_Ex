@@ -1,5 +1,4 @@
-import { $ } from '../../controllers/scripts/shortcuts.js'
-import Modal from '../modal/Modal.js'
+import Modal from './modal/Modal.js'
 import mount from './mount.js'
 
 class Card {
@@ -16,7 +15,7 @@ class Card {
   }
 
   get figure () {
-    return this.#figure ??= $('.models .pizza-item').cloneNode(true)
+    return this.#figure
   }
 
   get img () {
@@ -45,7 +44,12 @@ class Card {
     this.#name = pizza.name
     this.#price = pizza.price.toFixed(2)
     this.#sizes = pizza.sizes
-    mount(this, this.figure)
+    mount(this)
+  }
+
+  appendFigure (figure) {
+    this.#figure = figure
+    return this
   }
 
   openModal (event) {

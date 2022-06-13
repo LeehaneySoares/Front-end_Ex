@@ -1,18 +1,14 @@
-import { $ } from '../../controllers/scripts/shortcuts.js'
 import appendInfo from './actions/appendInfo.js'
 import cancelButton from './actions/cancelButton.js'
-import Display from './Display.js'
 
 class Modal {
   #modal
-  #parent
 
   get modal () {
-    return this.#modal ??= $('.pizzaWindowArea')
+    return this.#modal ??= document.querySelector('.pizzaWindowArea')
   }
 
-  constructor (parent) {
-    appendInfo(parent)
+  constructor () {
     cancelButton(this)
   }
 
@@ -30,7 +26,9 @@ class Modal {
   }
 
   static create (parent) {
-    return new Modal(parent)
+    return new Modal(
+      appendInfo(parent)
+    )
   }
 }
 
