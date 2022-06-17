@@ -18,6 +18,10 @@ class ValidaCPF {
     return result <= 9 ? result : '0'
   }
 
+  generateParcial () {
+    return this.cpfLimpo.slice(0, -2)
+  }
+
   getNumber (cpfParcial) {
     const parcial = [...cpfParcial]
     let multiply = parcial.length + 1
@@ -38,7 +42,7 @@ class ValidaCPF {
     if (typeof this.cpfLimpo === 'undefined') return 'N° de CPF não é válido'
     if (this.cpfLimpo.length !== 11) return 'CPF faltando números'
     if (this.isSequence()) return 'CPF não pode ser uma sequência'
-    this.#cpfParcial = this.cpfLimpo.slice(0, -2)
+    this.#cpfParcial = this.generateParcial()
     this.#firstDigit = this.getNumber(this.#cpfParcial)
     this.#secondDigit = this.getNumber(this.#cpfParcial + this.#firstDigit)
     this.#cpfValidado = this.#cpfParcial + this.#firstDigit + this.#secondDigit
