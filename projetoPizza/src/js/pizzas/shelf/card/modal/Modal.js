@@ -1,15 +1,19 @@
 import appendInfo from './actions/appendInfo.js'
 import cancelButton from './actions/cancelButton.js'
+import sizeSelected from './actions/sizeSelected.js'
 
 class Modal {
-  #modal
-
   get modal () {
-    return this.#modal ??= document.querySelector('.pizzaWindowArea')
+    return document.querySelector('.pizzaWindowArea')
+  }
+
+  get options () {
+    return document.querySelector('.pizzaInfo--sizes')
   }
 
   constructor () {
     cancelButton(this)
+    this.changeSizes()
   }
 
   open () {
@@ -22,6 +26,11 @@ class Modal {
   close () {
     this.modal.style.opacity = 0
     setTimeout(() => this.modal.style.display = 'none', 200)
+    return this
+  }
+
+  changeSizes () {
+    sizeSelected(this)
     return this
   }
 
