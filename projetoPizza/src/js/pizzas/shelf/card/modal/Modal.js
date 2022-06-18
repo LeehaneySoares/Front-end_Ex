@@ -1,19 +1,26 @@
 import appendInfo from './actions/appendInfo.js'
 import cancelButton from './actions/cancelButton.js'
 import sizeSelected from './actions/sizeSelected.js'
-
+import Sizes from './Sizes.js'
 class Modal {
+  #sizes
+
   get modal () {
     return document.querySelector('.pizzaWindowArea')
   }
 
   get options () {
-    return document.querySelector('.pizzaInfo--sizes')
+    return document.querySelectorAll('.pizzaInfo--sizes .pizzaInfo--size')
   }
 
-  constructor () {
+  get sizes () {
+    return this.#sizes
+  }
+
+  constructor (parent) {
+    appendInfo(parent)
     cancelButton(this)
-    this.changeSizes()
+    this.#sizes = Sizes.create(this.options)
   }
 
   open () {
@@ -29,15 +36,8 @@ class Modal {
     return this
   }
 
-  changeSizes () {
-    sizeSelected(this)
-    return this
-  }
-
   static create (parent) {
-    return new Modal(
-      appendInfo(parent)
-    )
+    return new Modal(parent)
   }
 }
 

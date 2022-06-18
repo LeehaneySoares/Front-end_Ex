@@ -1,6 +1,8 @@
-const sizeSelected = document.querySelector('.pizzaInfo--sizes .pizzaInfo--size')
+const $ = element => document.querySelector(element)
 
-export default (modal) => {
-  modal.options.querySelector('.pizzaInfo--size.selected').classList.remove('selected')
-  modal.options.querySelector('pizzaInfo--size').classList.add('selected')
+const sizeSelected = function (size) {
+  $('.pizzaInfo--size.selected').classList.remove('selected')
+  size.classList.add('selected')
 }
+
+export default sizeSelected
