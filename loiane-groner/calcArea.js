@@ -1,12 +1,4 @@
-function pessoa (nome, sobrenome, idade) {
-  return {
-    nome,
-    sobrenome,
-    idade,
-    nomeCompleto () {
-      return `${this.nome} ${this.sobrenome}`
-    }
-  }
-}
+const circleArea = r => 3.14 * (r ** 2)
+const squareArea = s => s * s
 
-export { pessoa as teste }
+export { circleArea as circle, squareArea as square }

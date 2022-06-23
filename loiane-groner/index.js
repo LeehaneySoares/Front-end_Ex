@@ -1,5 +1,8 @@
-import { teste } from './calcArea.js'
+// import * as area from './calcArea.js'
 
-const pessoa1 = teste('Leehaney', 'Soares', 25)
+const Book = require('./Book.js')
 
-console.log(pessoa1.nomeCompleto())
+// console.log(area.circle(2), area.square(2))
+const book = new Book('Magnus chase')
+
+book.printTitle()
