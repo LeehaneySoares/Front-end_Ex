@@ -1,141 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="author" content="Leehaney Soares Ferreira"/>
-        <meta name="description" content="Formulário de Pesquisa"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <title>Formulário</title>
-    </head>
-    <body>
-        <section class="l-corpo">
-            <div class="container">
-                <header>
-                    <h1>Survey Form</h1>
-                    <h3>Thank you for taking the time to help us improve the platform</h3>
-                </header>
-                <main>
-                    <form method="POST" enctype="multipart/form-data">
 
-                        <fieldset>
-                            <legend>Dados Pessoais</legend>
-                            <div class="form-group">
-                                <label for="nome">Nome:</label><br/>
-                                <input type="text" name="nome" placeholder="Digite seu nome" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail:</label><br/>
-                                <input type="email" name="email" placeholder="Seu@email.com" required pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" title="Ex.: Seu@email.com"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="age">Idade:</label><br/>
-                                <input type="date" name="age" min="1910-01-01" max="2003-12-31" required/>
-                            </div>
-                        </fieldset>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Leehaney Soares Ferreira" />
+  <meta name="description" content="Formulário de Pesquisa" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <title>Formulário</title>
+</head>
 
-                        <fieldset id="one-aswer">
-                            <legend>Pesquisa Individual</legend>
-                            <div class="form-group">
-                                <label for="job">Qual opção abaixo descreve melhor sua função atual ?</label>
-                            </div>
-                            <div class="form-group">
-                                <select id="dropdown" name="options">
-                                    <optgroup label="Selecione uma das opções">
+<body>
+  <section class="l-corpo">
+    <div class="container">
+      <header>
+        <h1>Survey Form</h1>
+        <h3>Thank you for taking the time to help us improve the platform</h3>
+      </header>
+      <main>
+        <form method="POST" enctype="multipart/form-data">
 
-                                        <option value="student">Estudante</option>
-                                        <option value="full-time">Trabalha tempo integral</option>
-                                        <option value="full-time-leaner">Estuda meio periodo</option>
-                                        <option value="dont-say">Não quero dizer</option>
-                                        <option value="other">Outro...</option>
+          <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div class="form-group">
+              <label for="nome">Nome:</label><br />
+              <input type="text" name="nome" placeholder="Digite seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail:</label><br />
+              <input type="email" name="email" placeholder="Seu@email.com" required
+                pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" title="Ex.: Seu@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="age">Idade:</label><br />
+              <input type="date" name="age" min="1910-01-01" max="2003-12-31" required />
+            </div>
+          </fieldset>
 
-                                    </optgroup>
-                                </select>
-                            </div>
-                                
-                            <div class="form-group">
-                                <label for="indication">Indicaria esse formulário a algum amigo ?</label><br/>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" name="indication" value="definitely"/>
-                                <label for="definitely">Definitivamente</label><br/>
+          <fieldset id="one-aswer">
+            <legend>Pesquisa Individual</legend>
+            <div class="form-group">
+              <label for="job">Qual opção abaixo descreve melhor sua função atual ?</label>
+            </div>
+            <div class="form-group">
+              <select id="dropdown" name="options">
+                <optgroup label="Selecione uma das opções">
 
-                                <input type="radio" name="indication" value="maybe"/>
-                                <label for="maybe">Talvez</label><br/>
+                  <option value="student">Estudante</option>
+                  <option value="full-time">Trabalha tempo integral</option>
+                  <option value="full-time-leaner">Estuda meio periodo</option>
+                  <option value="dont-say">Não quero dizer</option>
+                  <option value="other">Outro...</option>
 
-                                <input type="radio" name="indication" value="not-sure"/>
-                                <label for="not-sure">Nunca</label>
-                            </div>
-                                
-                            <div class="form-group">
-                                <label for="recourse">Qual é o seu recurso favorito ?</label>
-                            </div>
-                            <div class="form-group">
-                                <select id="favorite" name="recursos">
-                                    <optgroup label="Selecione uma das opções">
+                </optgroup>
+              </select>
+            </div>
 
-                                        <option value="challenges">Desafios</option>
-                                        <option value="projects"> Projetos</option>
-                                        <option value="community">Comunidade</option>
-                                        <option value="open-source">Open Source</option>
+            <div class="form-group">
+              <label for="indication">Indicaria esse formulário a algum amigo ?</label><br />
+            </div>
+            <div class="form-group">
+              <input type="radio" name="indication" value="definitely" />
+              <label for="definitely">Definitivamente</label><br />
 
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="improved">O que você gostaria de ver melhorado ? (Marque todas as opções aplicaveis)</label><br/>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Front-end Projects</label><br/>
+              <input type="radio" name="indication" value="maybe" />
+              <label for="maybe">Talvez</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Back-end Projects</label><br/>
+              <input type="radio" name="indication" value="not-sure" />
+              <label for="not-sure">Nunca</label>
+            </div>
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Data Visualization</label><br/>
+            <div class="form-group">
+              <label for="recourse">Qual é o seu recurso favorito ?</label>
+            </div>
+            <div class="form-group">
+              <select id="favorite" name="recursos">
+                <optgroup label="Selecione uma das opções">
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Challenges</label><br/>
+                  <option value="challenges">Desafios</option>
+                  <option value="projects"> Projetos</option>
+                  <option value="community">Comunidade</option>
+                  <option value="open-source">Open Source</option>
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Open Source Community</label><br/>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="improved">O que você gostaria de ver melhorado ? (Marque todas as opções
+                aplicaveis)</label><br />
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Front-end Projects</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Gitter help rooms</label><br/>
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Back-end Projects</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Videos</label><br/>
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Data Visualization</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">City Meetups</label><br/>
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Challenges</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Wiki</label><br/>
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Open Source Community</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Forum</label><br/>
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Gitter help rooms</label><br />
 
-                                <input type="checkbox" name="improved" value="front"/>
-                                <label for="front">Additional Courses</label><br/>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="suggestion">Faça um comentário ou deixe alguma sugestão:</label><br/>
-                                <textarea cols="50" rows="10">
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Videos</label><br />
+
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">City Meetups</label><br />
+
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Wiki</label><br />
+
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Forum</label><br />
+
+              <input type="checkbox" name="improved" value="front" />
+              <label for="front">Additional Courses</label><br />
+            </div>
+
+            <div class="form-group">
+              <label for="suggestion">Faça um comentário ou deixe alguma sugestão:</label><br />
+              <textarea cols="50" rows="10">
 
                                 </textarea>
-                            </div>
-                            <div class="submit-area">
-                                <input type="submit" id="bottom" value="Enviar!">
-                            </div>
-                        </fieldset>
-                        
-                    </form>
-                </main>
-                
             </div>
-        </section>
-    </body>
+            <div class="submit-area">
+              <input type="submit" id="bottom" value="Enviar!">
+            </div>
+          </fieldset>
+
+        </form>
+      </main>
+
+    </div>
+  </section>
+</body>
+
 </html>
