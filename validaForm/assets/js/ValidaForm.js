@@ -63,9 +63,10 @@ class ValidaForm {
     const user = this.validUser()
     const password = this.validPassword()
 
-    required && cpf && user && password
-      ? this.form.submit()
-      : this
+    if (required && cpf && user && password) {
+      alert('Formulário enviado com Sucesso!')
+      this.form.submit()
+    }
     return this
   }
 
