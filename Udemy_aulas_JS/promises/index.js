@@ -56,13 +56,26 @@ function esperaAi (msg, tempo) {
 //Promise race
 
 
-const promise = [
-  esperaAi('Eu sou a promise 1', randomTime(1, 5)),
-  esperaAi(1997, randomTime(1, 5)),
-  esperaAi('Eu sou a promise 3', randomTime(1, 2)),
-]
+// const promise = [
+//   esperaAi('Eu sou a promise 1', randomTime(1, 5)),
+//   esperaAi(1997, randomTime(1, 5)),
+//   esperaAi('Eu sou a promise 3', randomTime(1, 2)),
+// ]
 
-Promise.race(promise)
+// Promise.race(promise)
+//   .then(response => console.log(response))
+//   .catch(error => console.log(error))
+
+// Promise.resolve
+
+const baixarPagina = function () {
+  const emCache = false
+
+  return emCache
+    ? Promise.resolve('Página já está baixada')
+    : Promise.reject(new Error('Estou baixando a página'))
+}
+
+baixarPagina()
   .then(response => console.log(response))
   .catch(error => console.log(error))
-
