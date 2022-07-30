@@ -1,0 +1,40 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 80px;
+  width: 100vw;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  list-style: none;
+  padding: 20px;
+}
