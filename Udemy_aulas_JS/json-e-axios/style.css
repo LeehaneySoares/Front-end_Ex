@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  width: 80%;
+}
+
+table td {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+.app button {
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 140px;
+}
